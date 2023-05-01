@@ -1,0 +1,2 @@
+Removed Pin From Net: NetName=MCU_UART5_TX Pin=TP16-1
+Removed Member From Class: ClassName=U_MCU Member=TP16

@@ -1,0 +1,3 @@
+Record=TopLevelDocument|FileName=BLOCK_SCHEME.SchDoc|SheetNumber=1
+Record=SheetSymbol|SourceDocument=BLOCK_SCHEME.SchDoc|Designator=U_MCU|SchDesignator=U_MCU|FileName=MCU.SchDoc|SheetNumber=2|SymbolType=Normal|RawFileName=MCU.SchDoc|DesignItemId= |SourceLibraryName= |ObjectKind=Sheet Symbol|RevisionGUID= |ItemGUID= |VaultGUID= 
+Record=SheetSymbol|SourceDocument=MCU.SchDoc|Designator=U_LED_STATUS|SchDesignator=U_LED_STATUS|FileName=LED_STATUS.SchDoc|SheetNumber=3|SymbolType=Normal|RawFileName=LED_STATUS.SchDoc|DesignItemId= |SourceLibraryName= |ObjectKind=Sheet Symbol|RevisionGUID= |ItemGUID= |VaultGUID= 

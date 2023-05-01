@@ -1,0 +1,6 @@
+Removed Pin From Net: NetName=UART_NRTS Pin=TP20-1
+Removed Pin From Net: NetName=UART_NCTS Pin=TP21-1
+Removed Pin From Net: NetName=GND Pin=TP22-1
+Removed Member From Class: ClassName=U_MCU Member=TP20
+Removed Member From Class: ClassName=U_MCU Member=TP21
+Removed Member From Class: ClassName=U_MCU Member=TP22
