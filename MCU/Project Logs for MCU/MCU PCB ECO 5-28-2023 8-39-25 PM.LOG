@@ -1,0 +1,4 @@
+Removed Pin From Net: NetName=MCU I2C1_SDA Pin=TP11-1
+Removed Pin From Net: NetName=MCU I2C1_SCL Pin=TP14-1
+Removed Member From Class: ClassName=U_MCU Member=TP11
+Removed Member From Class: ClassName=U_MCU Member=TP14

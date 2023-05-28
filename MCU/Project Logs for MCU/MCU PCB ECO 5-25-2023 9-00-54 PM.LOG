@@ -1,0 +1,4 @@
+Removed Pin From Net: NetName=+3V3_S Pin=Q1-2
+Removed Pin From Net: NetName=MCU_LED_3V3_A Pin=Q1-3
+Added Pin To Net: NetName=MCU_LED_3V3_A Pin=Q1-2
+Added Pin To Net: NetName=+3V3_S Pin=Q1-3

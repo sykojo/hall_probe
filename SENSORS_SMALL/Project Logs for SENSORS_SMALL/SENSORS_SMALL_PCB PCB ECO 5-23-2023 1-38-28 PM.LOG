@@ -1,0 +1,8 @@
+Removed Pin From Net: NetName=GND Pin=TP11-1
+Removed Pin From Net: NetName=GND Pin=TP12-1
+Removed Pin From Net: NetName=GND Pin=TP13-1
+Removed Pin From Net: NetName=GND Pin=TP14-1
+Removed Member From Class: ClassName=SENSORS_SMALL_SCH Member=TP11
+Removed Member From Class: ClassName=SENSORS_SMALL_SCH Member=TP12
+Removed Member From Class: ClassName=SENSORS_SMALL_SCH Member=TP13
+Removed Member From Class: ClassName=SENSORS_SMALL_SCH Member=TP14
