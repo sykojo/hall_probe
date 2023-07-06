@@ -1,0 +1,6 @@
+Removed Pin From Net: NetName=MCU_UART4_TX Pin=MCU-51
+Removed Pin From Net: NetName=MCU_UART4_RX Pin=MCU-52
+Added Pin To Net: NetName=MCU_UART4_RX Pin=MCU-51
+Added Pin To Net: NetName=MCU_UART4_TX Pin=MCU-52
+Change Net Name : Old Net Name=MCU_UART4_RX New Net Name=MCU_UART4_TX
+Change Net Name : Old Net Name=MCU_UART4_TX New Net Name=MCU_UART4_RX

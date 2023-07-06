@@ -1,0 +1,11 @@
+Change Footprint: Footprint Not Found HDRRA10W66P254X254_2X5_1270X254X528P
+Change Component Comment : Designator=J1 Old Comment=M20-9950545 New Comment=M20-9740546
+Change component parameters: Designator = "J1" ("J1"); Footprint = "HDRRA10W66P254_2X5_1270X254X528P"; UniqueID = "\LOUDHJYK" ("\LOUDHJYK")
+Change component parameters (AddParameter): Name = "Arrow Part Number"; Value = ""; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Arrow Price/Stock"; Value = ""; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Datasheet Link"; Value = "https://cdn.harwin.com/pdfs/M20-974.pdf"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Height"; Value = "5.28mm"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Manufacturer_Name"; Value = "Harwin"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Manufacturer_Part_Number"; Value = "M20-9740546"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Mouser Part Number"; Value = "855-M20-9740546"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Mouser Price/Stock"; Value = "https://www.mouser.co.uk/ProductDetail/Harwin/M20-9740546?qs=Jph8NoUxIfWt9LqcR4oT%2Fg%3D%3D"; VariantName = "[No Variations]"

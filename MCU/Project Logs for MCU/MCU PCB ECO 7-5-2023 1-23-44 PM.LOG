@@ -1,0 +1,44 @@
+Removed Pin From Net: NetName=GND Pin=R55-1
+Removed Pin From Net: NetName=GND Pin=R56-1
+Removed Pin From Net: NetName=GND Pin=R58-1
+Removed Pin From Net: NetName=GND Pin=R59-1
+Removed Pin From Net: NetName=GND Pin=R60-1
+Removed Pin From Net: NetName=GND Pin=R61-1
+Added Component: Designator=GPIO1(HDRV3W64P0X254_1X3_762X254X864P)
+Add component (AddParameter): Name = "Arrow Part Number"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Arrow Price/Stock"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Datasheet Link"; Value = "https://cdn.harwin.com/pdfs/M20-999.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Height"; Value = "8.64mm"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer_Name"; Value = "Harwin"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer_Part_Number"; Value = "M20-9990345"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Mouser Part Number"; Value = "855-M20-9990345"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Mouser Price/Stock"; Value = "https://www.mouser.co.uk/ProductDetail/Harwin/M20-9990345?qs=ulE8k0yEMYbl6ZPCtNdmpA%3D%3D"; VariantName = "[No Variations]"
+Added Component: Designator=GPIO2(HDRV3W64P0X254_1X3_762X254X864P)
+Add component (AddParameter): Name = "Arrow Part Number"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Arrow Price/Stock"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Datasheet Link"; Value = "https://cdn.harwin.com/pdfs/M20-999.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Height"; Value = "8.64mm"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer_Name"; Value = "Harwin"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer_Part_Number"; Value = "M20-9990345"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Mouser Part Number"; Value = "855-M20-9990345"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Mouser Price/Stock"; Value = "https://www.mouser.co.uk/ProductDetail/Harwin/M20-9990345?qs=ulE8k0yEMYbl6ZPCtNdmpA%3D%3D"; VariantName = "[No Variations]"
+Added Pin To Net: NetName=UART_GPIO2 Pin=GPIO1-1
+Added Pin To Net: NetName=UART_GPIO4 Pin=GPIO1-2
+Added Pin To Net: NetName=UART_GPIO5 Pin=GPIO1-3
+Added Pin To Net: NetName=UART_GPIO3 Pin=GPIO2-1
+Added Pin To Net: NetName=UART_GPIO5 Pin=R58-1
+Added Pin To Net: NetName=UART_GPIO4 Pin=R59-1
+Added Pin To Net: NetName=UART_GPIO2 Pin=R60-1
+Added Pin To Net: NetName=UART_GPIO3 Pin=R61-1
+Added Pin To Net: NetName=UART_GPIO6 Pin=GPIO2-3
+Added Pin To Net: NetName=UART_GPIO6 Pin=IC23-27
+Added Pin To Net: NetName=UART_GPIO6 Pin=R56-1
+Added Pin To Net: NetName=UART_GPIO6 Pin=R56-2
+Added Net: Name=UART_GPIO6
+Added Pin To Net: NetName=UART_GPIO7 Pin=GPIO2-2
+Added Pin To Net: NetName=UART_GPIO7 Pin=IC23-28
+Added Pin To Net: NetName=UART_GPIO7 Pin=R55-1
+Added Pin To Net: NetName=UART_GPIO7 Pin=R55-2
+Added Net: Name=UART_GPIO7
+Added Member To Class: ClassName=MCU Member=Component GPIO1 GPIO_2_4_5 CONNECTOR
+Added Member To Class: ClassName=MCU Member=Component GPIO2 GPIO 3_6_7 CONNECTOR

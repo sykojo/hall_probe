@@ -1,0 +1,171 @@
+Protel Design System Design Rule Check
+PCB File : C:\Users\sykojo\Documents\_electronics\hall_probe\SENSORS_SMALL\SENSORS_SMALL_PCB.PcbDoc
+Date     : 7/6/2023
+Time     : 5:16:48 PM
+
+Processing Rule : Clearance Constraint (Gap=4mil) (All),(All)
+Rule Violations :0
+
+Processing Rule : Short-Circuit Constraint (Allowed=No) (All),(All)
+Rule Violations :0
+
+Processing Rule : Un-Routed Net Constraint ( (All) )
+   Violation between Un-Routed Net Constraint: Net GND Between Pad IC6-6(3283.425mil,464.961mil) on L1 (Signal) [Unplated] And Pad IC10-6(3693.425mil,464.961mil) on L1 (Signal) [Unplated] 
+   Violation between Un-Routed Net Constraint: Net GND Between Pad IC1-6(2463.425mil,464.961mil) on L1 (Signal) [Unplated] And Pad IC3-6(2873.425mil,464.961mil) on L1 (Signal) [Unplated] 
+   Violation between Un-Routed Net Constraint: Net GND Between Pad IC7-6(2053.425mil,464.961mil) on L1 (Signal) [Unplated] And Pad IC1-6(2463.425mil,464.961mil) on L1 (Signal) [Unplated] 
+   Violation between Un-Routed Net Constraint: Net GND Between Pad IC2-6(823.425mil,464.961mil) on L1 (Signal) [Unplated] And Pad IC4-6(1233.425mil,464.961mil) on L1 (Signal) [Unplated] 
+   Violation between Un-Routed Net Constraint: Net GND Between Pad IC3-6(2873.425mil,464.961mil) on L1 (Signal) [Unplated] And Pad IC6-6(3283.425mil,464.961mil) on L1 (Signal) [Unplated] 
+   Violation between Un-Routed Net Constraint: Net GND Between Pad IC4-6(1233.425mil,464.961mil) on L1 (Signal) [Unplated] And Pad IC5-6(1643.425mil,464.961mil) on L1 (Signal) [Unplated] 
+   Violation between Un-Routed Net Constraint: Net GND Between Pad IC5-6(1643.425mil,464.961mil) on L1 (Signal) [Unplated] And Pad IC7-6(2053.425mil,464.961mil) on L1 (Signal) [Unplated] 
+   Violation between Un-Routed Net Constraint: Net GND Between Pad J1-9(250.039mil,652.165mil) on Multi-Layer And Pad IC8-8(640.709mil,760.472mil) on L1 (Signal) [Unplated] 
+   Violation between Un-Routed Net Constraint: Net GND Between Pad IC8-8(640.709mil,760.472mil) on L1 (Signal) [Unplated] And Track (740.039mil,420.669mil)(755.618mil,436.248mil) on L1 (Signal) 
+   Violation between Un-Routed Net Constraint: Net GND Between Pad IC9-8(409.37mil,147.599mil) on L1 (Signal) [Unplated] And Track (740.039mil,420.669mil)(755.618mil,436.248mil) on L1 (Signal) 
+   Violation between Un-Routed Net Constraint: Net CS_OUT Between Pad R11-2(338.543mil,810.905mil) on L1 (Signal) [Unplated] And Pad R11-1(401.536mil,810.905mil) on L1 (Signal) [Unplated] 
+   Violation between Un-Routed Net Constraint: Net CS_OUT Between Pad R12-1(578.543mil,102.165mil) on L1 (Signal) [Unplated] And Pad R12-2(641.535mil,102.165mil) on L1 (Signal) [Unplated] 
+Rule Violations :12
+
+Processing Rule : Modified Polygon (Allow modified: No), (Allow shelved: No)
+Rule Violations :0
+
+Processing Rule : Width Constraint (Min=4mil) (Max=71497.938mil) (Preferred=4mil) (All)
+Rule Violations :0
+
+Processing Rule : Power Plane Connect Rule(Direct Connect )(Expansion=20mil) (Conductor Width=10mil) (Air Gap=10mil) (Entries=4) (InPadClass('PowerPads'))
+Rule Violations :0
+
+Processing Rule : Power Plane Connect Rule(Relief Connect )(Expansion=11.811mil) (Conductor Width=4mil) (Air Gap=4mil) (Entries=4) (All)
+Rule Violations :0
+
+Processing Rule : Minimum Annular Ring (Minimum=3mil) (All)
+   Violation between Minimum Annular Ring: (2.858mil < 3mil) Via (1047.917mil,439.09mil) from L1 (Signal) to L4 (Signal) (Annular Ring=2.858mil) On (Top Layer)
+   Violation between Minimum Annular Ring: (2.858mil < 3mil) Via (1149.606mil,508.217mil) from L1 (Signal) to L4 (Signal) (Annular Ring=2.858mil) On (Top Layer)
+   Violation between Minimum Annular Ring: (2.858mil < 3mil) Via (1232.284mil,393.701mil) from L1 (Signal) to L4 (Signal) (Annular Ring=2.858mil) On (Top Layer)
+   Violation between Minimum Annular Ring: (2.858mil < 3mil) Via (126mil,123mil) from L1 (Signal) to L4 (Signal) (Annular Ring=2.858mil) On (Top Layer)
+   Violation between Minimum Annular Ring: (2.858mil < 3mil) Via (1405.512mil,523.622mil) from L1 (Signal) to L4 (Signal) (Annular Ring=2.858mil) On (Top Layer)
+   Violation between Minimum Annular Ring: (2.858mil < 3mil) Via (1425.197mil,366.142mil) from L1 (Signal) to L4 (Signal) (Annular Ring=2.858mil) On (Top Layer)
+   Violation between Minimum Annular Ring: (2.858mil < 3mil) Via (1456.693mil,448.819mil) from L1 (Signal) to L4 (Signal) (Annular Ring=2.858mil) On (Top Layer)
+   Violation between Minimum Annular Ring: (2.858mil < 3mil) Via (1560.039mil,514.764mil) from L1 (Signal) to L4 (Signal) (Annular Ring=2.858mil) On (Top Layer)
+   Violation between Minimum Annular Ring: (2.858mil < 3mil) Via (1641.732mil,409.238mil) from L1 (Signal) to L4 (Signal) (Annular Ring=2.858mil) On (Top Layer)
+   Violation between Minimum Annular Ring: (2.858mil < 3mil) Via (167mil,159mil) from L1 (Signal) to L4 (Signal) (Annular Ring=2.858mil) On (Top Layer)
+   Violation between Minimum Annular Ring: (2.858mil < 3mil) Via (1814.961mil,523.622mil) from L1 (Signal) to L4 (Signal) (Annular Ring=2.858mil) On (Top Layer)
+   Violation between Minimum Annular Ring: (2.858mil < 3mil) Via (1862.205mil,452.756mil) from L1 (Signal) to L4 (Signal) (Annular Ring=2.858mil) On (Top Layer)
+   Violation between Minimum Annular Ring: (2.858mil < 3mil) Via (1970.039mil,514.212mil) from L1 (Signal) to L4 (Signal) (Annular Ring=2.858mil) On (Top Layer)
+   Violation between Minimum Annular Ring: (2.858mil < 3mil) Via (2053.425mil,398.238mil) from L1 (Signal) to L4 (Signal) (Annular Ring=2.858mil) On (Top Layer)
+   Violation between Minimum Annular Ring: (2.858mil < 3mil) Via (2224.409mil,519.685mil) from L1 (Signal) to L4 (Signal) (Annular Ring=2.858mil) On (Top Layer)
+   Violation between Minimum Annular Ring: (2.858mil < 3mil) Via (2279.528mil,448.819mil) from L1 (Signal) to L4 (Signal) (Annular Ring=2.858mil) On (Top Layer)
+   Violation between Minimum Annular Ring: (2.858mil < 3mil) Via (2381.89mil,515.748mil) from L1 (Signal) to L4 (Signal) (Annular Ring=2.858mil) On (Top Layer)
+   Violation between Minimum Annular Ring: (2.858mil < 3mil) Via (2460.63mil,393.701mil) from L1 (Signal) to L4 (Signal) (Annular Ring=2.858mil) On (Top Layer)
+   Violation between Minimum Annular Ring: (2.858mil < 3mil) Via (2633.858mil,350.394mil) from L1 (Signal) to L4 (Signal) (Annular Ring=2.858mil) On (Top Layer)
+   Violation between Minimum Annular Ring: (2.858mil < 3mil) Via (2637.795mil,523.622mil) from L1 (Signal) to L4 (Signal) (Annular Ring=2.858mil) On (Top Layer)
+   Violation between Minimum Annular Ring: (2.858mil < 3mil) Via (2688.976mil,452.756mil) from L1 (Signal) to L4 (Signal) (Annular Ring=2.858mil) On (Top Layer)
+   Violation between Minimum Annular Ring: (2.858mil < 3mil) Via (2791.339mil,515.748mil) from L1 (Signal) to L4 (Signal) (Annular Ring=2.858mil) On (Top Layer)
+   Violation between Minimum Annular Ring: (2.858mil < 3mil) Via (2874.016mil,381.776mil) from L1 (Signal) to L4 (Signal) (Annular Ring=2.858mil) On (Top Layer)
+   Violation between Minimum Annular Ring: (2.858mil < 3mil) Via (291.496mil,781.339mil) from L1 (Signal) to L4 (Signal) (Annular Ring=2.858mil) On (Top Layer)
+   Violation between Minimum Annular Ring: (2.858mil < 3mil) Via (299mil,153mil) from L1 (Signal) to L4 (Signal) (Annular Ring=2.858mil) On (Top Layer)
+   Violation between Minimum Annular Ring: (2.858mil < 3mil) Via (300mil,102mil) from L1 (Signal) to L4 (Signal) (Annular Ring=2.858mil) On (Top Layer)
+   Violation between Minimum Annular Ring: (2.858mil < 3mil) Via (3046.654mil,526.969mil) from L1 (Signal) to L4 (Signal) (Annular Ring=2.858mil) On (Top Layer)
+   Violation between Minimum Annular Ring: (2.858mil < 3mil) Via (3051.181mil,358.268mil) from L1 (Signal) to L4 (Signal) (Annular Ring=2.858mil) On (Top Layer)
+   Violation between Minimum Annular Ring: (2.858mil < 3mil) Via (3094.488mil,452.756mil) from L1 (Signal) to L4 (Signal) (Annular Ring=2.858mil) On (Top Layer)
+   Violation between Minimum Annular Ring: (2.858mil < 3mil) Via (3200.787mil,515.748mil) from L1 (Signal) to L4 (Signal) (Annular Ring=2.858mil) On (Top Layer)
+   Violation between Minimum Annular Ring: (2.858mil < 3mil) Via (3283.425mil,381.929mil) from L1 (Signal) to L4 (Signal) (Annular Ring=2.858mil) On (Top Layer)
+   Violation between Minimum Annular Ring: (2.858mil < 3mil) Via (337mil,277mil) from L1 (Signal) to L4 (Signal) (Annular Ring=2.858mil) On (Top Layer)
+   Violation between Minimum Annular Ring: (2.858mil < 3mil) Via (341.535mil,528.543mil) from L1 (Signal) to L4 (Signal) (Annular Ring=2.858mil) On (Top Layer)
+   Violation between Minimum Annular Ring: (2.858mil < 3mil) Via (341mil,148mil) from L1 (Signal) to L4 (Signal) (Annular Ring=2.858mil) On (Top Layer)
+   Violation between Minimum Annular Ring: (2.858mil < 3mil) Via (3507.874mil,448.819mil) from L1 (Signal) to L4 (Signal) (Annular Ring=2.858mil) On (Top Layer)
+   Violation between Minimum Annular Ring: (2.858mil < 3mil) Via (3610.236mil,515.748mil) from L1 (Signal) to L4 (Signal) (Annular Ring=2.858mil) On (Top Layer)
+   Violation between Minimum Annular Ring: (2.858mil < 3mil) Via (3692.913mil,385.827mil) from L1 (Signal) to L4 (Signal) (Annular Ring=2.858mil) On (Top Layer)
+   Violation between Minimum Annular Ring: (2.858mil < 3mil) Via (389.764mil,454.724mil) from L1 (Signal) to L4 (Signal) (Annular Ring=2.858mil) On (Top Layer)
+   Violation between Minimum Annular Ring: (2.858mil < 3mil) Via (389.764mil,510.827mil) from L1 (Signal) to L4 (Signal) (Annular Ring=2.858mil) On (Top Layer)
+   Violation between Minimum Annular Ring: (2.858mil < 3mil) Via (3913.386mil,448.819mil) from L1 (Signal) to L4 (Signal) (Annular Ring=2.858mil) On (Top Layer)
+   Violation between Minimum Annular Ring: (2.858mil < 3mil) Via (3948.819mil,515.748mil) from L1 (Signal) to L4 (Signal) (Annular Ring=2.858mil) On (Top Layer)
+   Violation between Minimum Annular Ring: (2.858mil < 3mil) Via (422mil,366mil) from L1 (Signal) to L4 (Signal) (Annular Ring=2.858mil) On (Top Layer)
+   Violation between Minimum Annular Ring: (2.858mil < 3mil) Via (450.788mil,548.228mil) from L1 (Signal) to L4 (Signal) (Annular Ring=2.858mil) On (Top Layer)
+   Violation between Minimum Annular Ring: (2.858mil < 3mil) Via (465mil,366mil) from L1 (Signal) to L4 (Signal) (Annular Ring=2.858mil) On (Top Layer)
+   Violation between Minimum Annular Ring: (2.858mil < 3mil) Via (475.394mil,813.976mil) from L1 (Signal) to L4 (Signal) (Annular Ring=2.858mil) On (Top Layer)
+   Violation between Minimum Annular Ring: (2.858mil < 3mil) Via (503mil,366mil) from L1 (Signal) to L4 (Signal) (Annular Ring=2.858mil) On (Top Layer)
+   Violation between Minimum Annular Ring: (2.858mil < 3mil) Via (518mil,77mil) from L1 (Signal) to L4 (Signal) (Annular Ring=2.858mil) On (Top Layer)
+   Violation between Minimum Annular Ring: (2.858mil < 3mil) Via (542mil,529.342mil) from L1 (Signal) to L4 (Signal) (Annular Ring=2.858mil) On (Top Layer)
+   Violation between Minimum Annular Ring: (2.858mil < 3mil) Via (550.061mil,311.939mil) from L1 (Signal) to L4 (Signal) (Annular Ring=2.858mil) On (Top Layer)
+   Violation between Minimum Annular Ring: (2.858mil < 3mil) Via (571mil,529.342mil) from L1 (Signal) to L4 (Signal) (Annular Ring=2.858mil) On (Top Layer)
+   Violation between Minimum Annular Ring: (2.858mil < 3mil) Via (572mil,22.657mil) from L1 (Signal) to L4 (Signal) (Annular Ring=2.858mil) On (Top Layer)
+   Violation between Minimum Annular Ring: (2.858mil < 3mil) Via (574mil,64mil) from L1 (Signal) to L4 (Signal) (Annular Ring=2.858mil) On (Top Layer)
+   Violation between Minimum Annular Ring: (2.858mil < 3mil) Via (582.354mil,283.646mil) from L1 (Signal) to L4 (Signal) (Annular Ring=2.858mil) On (Top Layer)
+   Violation between Minimum Annular Ring: (2.858mil < 3mil) Via (602.362mil,531.496mil) from L1 (Signal) to L4 (Signal) (Annular Ring=2.858mil) On (Top Layer)
+   Violation between Minimum Annular Ring: (2.858mil < 3mil) Via (612mil,391.425mil) from L1 (Signal) to L4 (Signal) (Annular Ring=2.858mil) On (Top Layer)
+   Violation between Minimum Annular Ring: (2.858mil < 3mil) Via (633.858mil,531.496mil) from L1 (Signal) to L4 (Signal) (Annular Ring=2.858mil) On (Top Layer)
+   Violation between Minimum Annular Ring: (2.858mil < 3mil) Via (696.85mil,309.055mil) from L1 (Signal) to L4 (Signal) (Annular Ring=2.858mil) On (Top Layer)
+   Violation between Minimum Annular Ring: (2.858mil < 3mil) Via (696.85mil,474.409mil) from L1 (Signal) to L4 (Signal) (Annular Ring=2.858mil) On (Top Layer)
+   Violation between Minimum Annular Ring: (2.858mil < 3mil) Via (716.535mil,557.342mil) from L1 (Signal) to L4 (Signal) (Annular Ring=2.858mil) On (Top Layer)
+   Violation between Minimum Annular Ring: (2.858mil < 3mil) Via (823.425mil,391.425mil) from L1 (Signal) to L4 (Signal) (Annular Ring=2.858mil) On (Top Layer)
+   Violation between Minimum Annular Ring: (2.858mil < 3mil) Via (897.638mil,444.882mil) from L1 (Signal) to L4 (Signal) (Annular Ring=2.858mil) On (Top Layer)
+Rule Violations :61
+
+Processing Rule : Hole Size Constraint (Min=7.874mil) (Max=248.031mil) (All)
+Rule Violations :0
+
+Processing Rule : Hole To Hole Clearance (Gap=9.842mil) (All),(All)
+Rule Violations :0
+
+Processing Rule : Minimum Solder Mask Sliver (Gap=0mil) (All),(All)
+Rule Violations :0
+
+Processing Rule : Silk To Solder Mask (Clearance=4mil) (IsPad),(All)
+   Violation between Silk To Solder Mask Clearance Constraint: (Collision < 4mil) Between Pad IC9-10(640.709mil,173.189mil) on L1 (Signal) And Text "R12" (510.039mil,163.165mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mil]
+   Violation between Silk To Solder Mask Clearance Constraint: (Collision < 4mil) Between Pad IC9-11(640.709mil,198.78mil) on L1 (Signal) And Text "R12" (510.039mil,163.165mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mil]
+   Violation between Silk To Solder Mask Clearance Constraint: (Collision < 4mil) Between Pad IC9-12(640.709mil,224.37mil) on L1 (Signal) And Text "R12" (510.039mil,163.165mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mil]
+   Violation between Silk To Solder Mask Clearance Constraint: (Collision < 4mil) Between Pad IC9-15(640.709mil,301.142mil) on L1 (Signal) And Text "R9" (641.039mil,303.661mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mil]
+   Violation between Silk To Solder Mask Clearance Constraint: (Collision < 4mil) Between Pad IC9-16(640.709mil,326.732mil) on L1 (Signal) And Text "R9" (641.039mil,303.661mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mil]
+   Violation between Silk To Solder Mask Clearance Constraint: (1.709mil < 4mil) Between Pad IC9-9(640.709mil,147.599mil) on L1 (Signal) And Text "R12" (510.039mil,163.165mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [1.709mil]
+   Violation between Silk To Solder Mask Clearance Constraint: (Collision < 4mil) Between Pad R11-2(338.543mil,810.905mil) on L1 (Signal) And Text "R10" (211.039mil,791.165mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mil]
+Rule Violations :7
+
+Processing Rule : Silk to Silk (Clearance=0mil) (All),(All)
+Rule Violations :0
+
+Processing Rule : Net Antennae (Tolerance=0mil) (All)
+Rule Violations :0
+
+Processing Rule : Board Clearance Constraint (Gap=0mil) (All)
+   Violation between Board Outline Clearance(Outline Edge): (Collision < 7.874mil) Between Board Edge And Text "C1" (2354.039mil,540.165mil) on Top Overlay 
+   Violation between Board Outline Clearance(Outline Edge): (Collision < 7.874mil) Between Board Edge And Text "C2" (714.039mil,540.165mil) on Top Overlay 
+   Violation between Board Outline Clearance(Outline Edge): (Collision < 7.874mil) Between Board Edge And Text "C3" (2764.039mil,540.165mil) on Top Overlay 
+   Violation between Board Outline Clearance(Outline Edge): (Collision < 7.874mil) Between Board Edge And Text "C4" (1124.039mil,540.165mil) on Top Overlay 
+   Violation between Board Outline Clearance(Outline Edge): (Collision < 7.874mil) Between Board Edge And Text "C5" (1534.039mil,540.165mil) on Top Overlay 
+   Violation between Board Outline Clearance(Outline Edge): (Collision < 7.874mil) Between Board Edge And Text "C6" (3174.039mil,540.165mil) on Top Overlay 
+   Violation between Board Outline Clearance(Outline Edge): (Collision < 7.874mil) Between Board Edge And Text "C7" (1944.039mil,540.165mil) on Top Overlay 
+   Violation between Board Outline Clearance(Outline Edge): (Collision < 7.874mil) Between Board Edge And Text "C8" (3584.039mil,540.165mil) on Top Overlay 
+   Violation between Board Outline Clearance(Outline Edge): (Collision < 7.874mil) Between Board Edge And Text "IC1" (2435.039mil,554.165mil) on Top Overlay 
+   Violation between Board Outline Clearance(Outline Edge): (Collision < 7.874mil) Between Board Edge And Text "IC10" (3665.039mil,554.165mil) on Top Overlay 
+   Violation between Board Outline Clearance(Outline Edge): (Collision < 7.874mil) Between Board Edge And Text "IC2" (795.039mil,554.165mil) on Top Overlay 
+   Violation between Board Outline Clearance(Outline Edge): (Collision < 7.874mil) Between Board Edge And Text "IC3" (2845.039mil,554.165mil) on Top Overlay 
+   Violation between Board Outline Clearance(Outline Edge): (Collision < 7.874mil) Between Board Edge And Text "IC4" (1205.039mil,554.165mil) on Top Overlay 
+   Violation between Board Outline Clearance(Outline Edge): (Collision < 7.874mil) Between Board Edge And Text "IC5" (1615.039mil,554.165mil) on Top Overlay 
+   Violation between Board Outline Clearance(Outline Edge): (Collision < 7.874mil) Between Board Edge And Text "IC6" (3255.039mil,554.165mil) on Top Overlay 
+   Violation between Board Outline Clearance(Outline Edge): (Collision < 7.874mil) Between Board Edge And Text "IC7" (2025.039mil,554.165mil) on Top Overlay 
+   Violation between Board Outline Clearance(Outline Edge): (Collision < 7.874mil) Between Board Edge And Text "J1" (-236.961mil,753.165mil) on Top Overlay 
+   Violation between Board Outline Clearance(Outline Edge): (Collision < 7.874mil) Between Board Edge And Text "R1" (2699.039mil,542.165mil) on Top Overlay 
+   Violation between Board Outline Clearance(Outline Edge): (Collision < 7.874mil) Between Board Edge And Text "R11" (290.039mil,871.165mil) on Top Overlay 
+   Violation between Board Outline Clearance(Outline Edge): (Collision < 7.874mil) Between Board Edge And Text "R2" (1059.039mil,542.165mil) on Top Overlay 
+   Violation between Board Outline Clearance(Outline Edge): (Collision < 7.874mil) Between Board Edge And Text "R3" (3109.039mil,542.165mil) on Top Overlay 
+   Violation between Board Outline Clearance(Outline Edge): (Collision < 7.874mil) Between Board Edge And Text "R4" (1469.039mil,542.165mil) on Top Overlay 
+   Violation between Board Outline Clearance(Outline Edge): (Collision < 7.874mil) Between Board Edge And Text "R5" (1879.039mil,542.165mil) on Top Overlay 
+   Violation between Board Outline Clearance(Outline Edge): (Collision < 7.874mil) Between Board Edge And Text "R6" (3519.039mil,542.165mil) on Top Overlay 
+   Violation between Board Outline Clearance(Outline Edge): (Collision < 7.874mil) Between Board Edge And Text "R7" (2289.039mil,542.165mil) on Top Overlay 
+   Violation between Board Outline Clearance(Outline Edge): (Collision < 7.874mil) Between Board Edge And Text "R8" (3929.039mil,542.165mil) on Top Overlay 
+   Violation between Board Outline Clearance(Outline Edge): (Collision < 7.874mil) Between Board Edge And Track (-235.787mil,252.165mil)(-7.441mil,252.165mil) on Top Overlay 
+   Violation between Board Outline Clearance(Outline Edge): (Collision < 7.874mil) Between Board Edge And Track (-235.787mil,352.165mil)(-7.441mil,352.165mil) on Top Overlay 
+   Violation between Board Outline Clearance(Outline Edge): (Collision < 7.874mil) Between Board Edge And Track (-235.787mil,452.165mil)(-7.441mil,452.165mil) on Top Overlay 
+   Violation between Board Outline Clearance(Outline Edge): (Collision < 7.874mil) Between Board Edge And Track (-235.787mil,552.165mil)(-7.441mil,552.165mil) on Top Overlay 
+   Violation between Board Outline Clearance(Outline Edge): (Collision < 7.874mil) Between Board Edge And Track (-235.787mil,652.165mil)(-7.441mil,652.165mil) on Top Overlay 
+   Violation between Board Outline Clearance(Outline Edge): (Collision < 7.874mil) Between Board Edge And Track (-7.441mil,192.323mil)(250.039mil,192.323mil) on Top Overlay 
+   Violation between Board Outline Clearance(Outline Edge): (Collision < 7.874mil) Between Board Edge And Track (-7.441mil,192.323mil)(-7.441mil,712.008mil) on Top Overlay 
+   Violation between Board Outline Clearance(Outline Edge): (Collision < 7.874mil) Between Board Edge And Track (-7.441mil,712.008mil)(96.496mil,712.008mil) on Top Overlay 
+Rule Violations :34
+
+Processing Rule : Height Constraint (Min=0mil) (Max=71497.938mil) (Prefered=500mil) (All)
+Rule Violations :0
+
+
+Violations Detected : 114
+Waived Violations : 0
+Time Elapsed        : 00:00:02
