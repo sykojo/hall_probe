@@ -1,0 +1,29 @@
+Removed Pin From Net: NetName=USB_D_N Pin=IC1-1
+Removed Pin From Net: NetName=USB_D_P Pin=IC1-3
+Removed Pin From Net: NetName=USB_D_N Pin=J1-2
+Removed Pin From Net: NetName=USB_D_P Pin=J1-3
+Change Component Designator: OldDesignator=3V3 NewDesignator=LED7
+Change Component Designator: OldDesignator=5V NewDesignator=LED6
+Change Component Designator: OldDesignator=BOOT NewDesignator=Boot pin
+Change Component Designator: OldDesignator=BUTTON NewDesignator=SW1
+Change Component Designator: OldDesignator=ERROR NewDesignator=LED4
+Change Component Designator: OldDesignator=GND NewDesignator=TP6
+Change Component Designator: OldDesignator=I2C NewDesignator=J2
+Change Component Designator: OldDesignator=MEASURING NewDesignator=LED5
+Change Component Designator: OldDesignator=RESET NewDesignator=SW2
+Change Component Designator: OldDesignator=RX NewDesignator=LED1
+Change Component Designator: OldDesignator=RX NewDesignator=TP17
+Change Component Designator: OldDesignator=STATUS NewDesignator=LED3
+Change Component Designator: OldDesignator=TX NewDesignator=LED2
+Change Component Designator: OldDesignator=TX NewDesignator=TP18
+Added Pin To Net: NetName=CONN_USB_D_N Pin=IC1-1
+Added Pin To Net: NetName=CONN_USB_D_N Pin=J1-2
+Added Net: Name=CONN_USB_D_N
+Added Pin To Net: NetName=CONN_USB_D_P Pin=IC1-3
+Added Pin To Net: NetName=CONN_USB_D_P Pin=J1-3
+Added Net: Name=CONN_USB_D_P
+Added Differential Pair: Name=CONN_USB_D
+Added Member To Class: ClassName=MCU Member=Component LED1 RED_RX
+Added Member To Class: ClassName=MCU Member=Component TP6 5019
+Added Member To Class: ClassName=MCU Member=Component TP18 5019
+Added Class: Name=DIFF_USB

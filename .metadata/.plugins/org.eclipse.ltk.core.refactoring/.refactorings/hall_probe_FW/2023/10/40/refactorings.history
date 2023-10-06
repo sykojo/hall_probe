@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;hall_probe_FW/Core/Src/registerHandler.c&apos; to &apos;registerHandler.cpp&apos;" description="Rename resource &apos;registerHandler.c&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="Core/Src/registerHandler.c" name="registerHandler.cpp" stamp="1696522033042" updateReferences="true"/>
+</session>

@@ -1,0 +1,4 @@
+enum OPERATING_MODE{
+	uint8_t configuration_mode = 0x0;
+
+};

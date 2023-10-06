@@ -1,0 +1,71 @@
+Removed Pin From Net: NetName=MCU_SPI_SCK Pin=MCU-21
+Removed Pin From Net: NetName=MCU_SPI_MISO Pin=MCU-22
+Removed Pin From Net: NetName=MCU_SPI_MOSI Pin=MCU-23
+Removed Pin From Net: NetName=\M\C\U\_\C\S\ Pin=MCU-25
+Removed Pin From Net: NetName=SEN_OE Pin=MCU-26
+Removed Pin From Net: NetName=REG_CLR Pin=MCU-27
+Removed Pin From Net: NetName=REG_SCK Pin=MCU-28
+Removed Pin From Net: NetName=ALERT_OE Pin=MCU-29
+Removed Pin From Net: NetName=S\ E\ N\ S\ O\ R\ S\ _\ E\ N\ A\ B\ L\ E\ Pin=MCU-33
+Removed Pin From Net: NetName=MCU_LED_ERROR Pin=MCU-34
+Removed Pin From Net: NetName=MCU_LED_MEASURING Pin=MCU-35
+Removed Pin From Net: NetName=MCU_LED_STATUS Pin=MCU-36
+Removed Pin From Net: NetName=+5V Pin=R18-2
+Removed Pin From Net: NetName=+3V3 Pin=R19-2
+Removed Member From Class: ClassName=MCU Member=5V
+Change Component Designator: OldDesignator=3.3V NewDesignator=LED7
+Change Component Designator: OldDesignator=3V3 NewDesignator=TP2
+Change Component Designator: OldDesignator=3V3_S NewDesignator=TP3
+Change Component Designator: OldDesignator=5V NewDesignator=LED6
+Change Component Designator: OldDesignator=5V NewDesignator=TP1
+Change Component Designator: OldDesignator=Boot NewDesignator=Boot pin
+Change Component Designator: OldDesignator=ERROR NewDesignator=LED4
+Change Component Designator: OldDesignator=GND NewDesignator=TP4
+Change Component Designator: OldDesignator=GND NewDesignator=TP6
+Change Component Designator: OldDesignator=I2C NewDesignator=J2
+Change Component Designator: OldDesignator=JTAG NewDesignator=J3
+Change Component Designator: OldDesignator=MEASURE NewDesignator=LED5
+Change Component Designator: OldDesignator=RX NewDesignator=LED1
+Change Component Designator: OldDesignator=RX NewDesignator=TP17
+Change Component Designator: OldDesignator=STATUS NewDesignator=LED3
+Change Component Designator: OldDesignator=TX NewDesignator=LED2
+Change Component Designator: OldDesignator=TX NewDesignator=TP18
+Change Component Designator: OldDesignator=USER NewDesignator=SW1
+Added Component: Designator=J?(RHDRRA12W64P254_2X6_1575X851X495P)
+Add component (AddParameter): Name = "Arrow Part Number"; Value = "SSQ-106-02-T-D-RA"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Arrow Price/Stock"; Value = "https://www.arrow.com/en/products/ssq-106-02-t-d-ra/samtec?region=nac"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Datasheet Link"; Value = "http://suddendocs.samtec.com/catalog_english/ssq_th.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Height"; Value = "4.95mm"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer_Name"; Value = "SAMTEC"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer_Part_Number"; Value = "SSQ-106-02-T-D-RA"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Mouser Part Number"; Value = "200-SSQ10602TDRA"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Mouser Price/Stock"; Value = "https://www.mouser.co.uk/ProductDetail/Samtec/SSQ-106-02-T-D-RA?qs=rU5fayqh%252BE1vYyxgAhwVTA%3D%3D"; VariantName = "[No Variations]"
+Added Pin To Net: NetName=MISO_SEN Pin=MCU-22
+Added Net: Name=MISO_SEN
+Added Pin To Net: NetName=MISO_SHREG Pin=MCU-35
+Added Net: Name=MISO_SHREG
+Added Pin To Net: NetName=MOSI_SEN Pin=MCU-23
+Added Net: Name=MOSI_SEN
+Added Pin To Net: NetName=MOSI_SHREG Pin=MCU-36
+Added Net: Name=MOSI_SHREG
+Added Pin To Net: NetName=NetR18_2 Pin=R18-2
+Added Net: Name=NetR18_2
+Added Pin To Net: NetName=NetR19_2 Pin=R19-2
+Added Net: Name=NetR19_2
+Added Pin To Net: NetName=OE Pin=MCU-26
+Added Net: Name=OE
+Added Pin To Net: NetName=PL Pin=MCU-29
+Added Net: Name=PL
+Added Pin To Net: NetName=SCK_SEN Pin=MCU-21
+Added Net: Name=SCK_SEN
+Added Pin To Net: NetName=SCK_SHREG Pin=MCU-34
+Added Net: Name=SCK_SHREG
+Added Pin To Net: NetName=SCLR Pin=MCU-27
+Added Net: Name=SCLR
+Added Member To Class: ClassName=MCU Member=Component J? SSQ-106-02-T-D-RA
+Added Member To Class: ClassName=MCU Member=Component LED1 RED_RX
+Added Member To Class: ClassName=U_LED_STATUS Member=Component LED6 RED
+Added Member To Class: ClassName=MCU Member=Component TP1 5019
+Added Member To Class: ClassName=MCU Member=Component TP2 5019
+Added Member To Class: ClassName=MCU Member=Component TP4 5019
+Added Member To Class: ClassName=MCU Member=Component TP18 5019

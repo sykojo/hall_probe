@@ -1,0 +1,36 @@
+Removed Member From Class: ClassName=U_LED_STATUS Member=5V
+Change Component Designator: OldDesignator=3.3V NewDesignator=LED7
+Change Component Designator: OldDesignator=3V3 NewDesignator=TP2
+Change Component Designator: OldDesignator=3V3_S NewDesignator=TP3
+Change Component Designator: OldDesignator=5V NewDesignator=LED6
+Change Component Designator: OldDesignator=5V NewDesignator=TP1
+Change Component Designator: OldDesignator=BOOT NewDesignator=Boot pin
+Change Component Designator: OldDesignator=BUTTON NewDesignator=SW1
+Change Component Designator: OldDesignator=ERROR NewDesignator=LED4
+Change Component Designator: OldDesignator=GND NewDesignator=TP4
+Change Component Designator: OldDesignator=GND NewDesignator=TP6
+Change Component Designator: OldDesignator=I2C NewDesignator=J2
+Change Component Designator: OldDesignator=JTAG NewDesignator=J3
+Change Component Designator: OldDesignator=MEASURING NewDesignator=LED5
+Change Component Designator: OldDesignator=RX NewDesignator=LED1
+Change Component Designator: OldDesignator=RX NewDesignator=TP17
+Change Component Designator: OldDesignator=STATUS NewDesignator=LED3
+Change Component Designator: OldDesignator=TX NewDesignator=LED2
+Change Component Designator: OldDesignator=TX NewDesignator=TP18
+Added Component: Designator=C?(865080640004)
+Add component (AddParameter): Name = "Arrow Part Number"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Arrow Price/Stock"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Datasheet Link"; Value = "https://www.we-online.de/katalog/datasheet/865080640004.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Height"; Value = "5.5mm"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer_Name"; Value = "Wurth Elektronik"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer_Part_Number"; Value = "865080640004"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Mouser Part Number"; Value = "710-865080640004"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Mouser Price/Stock"; Value = "https://www.mouser.co.uk/ProductDetail/Wurth-Elektronik/865080640004?qs=0KOYDY2FL2%2FjY4kqBxIvAg%3D%3D"; VariantName = "[No Variations]"
+Added Pin To Net: NetName=+3V3 Pin=C?-1
+Added Pin To Net: NetName=GND Pin=C?-2
+Added Member To Class: ClassName=MCU Member=Component Boot pin M20-9990345
+Added Member To Class: ClassName=MCU Member=Component C? 865080640004
+Added Member To Class: ClassName=MCU Member=Component LED1 RED_RX
+Added Member To Class: ClassName=MCU Member=Component LED2 RED_TX
+Added Member To Class: ClassName=U_LED_STATUS Member=Component LED6 RED
+Added Member To Class: ClassName=MCU Member=Component TP6 5019

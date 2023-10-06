@@ -1,0 +1,71 @@
+Removed Pin From Net: NetName=ALERT_SEN2 Pin=IC9-1
+Removed Pin From Net: NetName=ALERT_SEN3 Pin=IC9-2
+Removed Pin From Net: NetName=ALERT_SEN4 Pin=IC9-3
+Removed Pin From Net: NetName=ALERT_SEN5 Pin=IC9-4
+Removed Pin From Net: NetName=ALERT_SEN6 Pin=IC9-5
+Removed Pin From Net: NetName=ALERT_SEN7 Pin=IC9-6
+Removed Pin From Net: NetName=ALERT_SEN8 Pin=IC9-7
+Removed Pin From Net: NetName=GND Pin=IC9-8
+Removed Pin From Net: NetName=ALERT_SEN1 Pin=IC9-15
+Removed Pin From Net: NetName=+3V3_S Pin=IC9-16
+Removed Pin From Net: NetName=SPI_MOSI Pin=J1-6
+Removed Pin From Net: NetName=+3V3_S Pin=J1-7
+Removed Pin From Net: NetName=SPI_MISO Pin=J1-8
+Removed Pin From Net: NetName=GND Pin=J1-9
+Removed Pin From Net: NetName=SPI_CLK Pin=J1-10
+Removed Pin From Net: NetName=CS_OUT_CONN Pin=R12-2
+Removed Member From Class: ClassName=SENSORS_SMALL_SCH Member=IC9
+Removed Member From Class: ClassName=SENSORS_SMALL_SCH Member=J1
+Removed Member From Class: ClassName=SENSORS_SMALL_SCH Member=R12
+Added Pin To Net: NetName=ALERT_SEN8 Pin=IC11-1
+Added Pin To Net: NetName=ALERT_SEN4 Pin=IC11-4
+Added Pin To Net: NetName=ALERT_SEN3 Pin=IC11-5
+Added Pin To Net: NetName=ALERT_SEN2 Pin=IC11-6
+Added Pin To Net: NetName=ALERT_SEN1 Pin=IC11-7
+Added Pin To Net: NetName=GND Pin=IC11-8
+Added Pin To Net: NetName=GND Pin=IC11-11
+Added Pin To Net: NetName=ALERT_SEN5 Pin=IC11-13
+Added Pin To Net: NetName=ALERT_SEN6 Pin=IC11-14
+Added Pin To Net: NetName=ALERT_SEN7 Pin=IC11-15
+Added Pin To Net: NetName=+3V3_S Pin=IC11-16
+Added Pin To Net: NetName=GND Pin=J2-1
+Added Pin To Net: NetName=SPI_CLK Pin=J2-2
+Added Pin To Net: NetName=+3V3_S Pin=J2-3
+Added Pin To Net: NetName=SPI_MISO Pin=J2-4
+Added Pin To Net: NetName=SPI_MOSI Pin=J2-6
+Change Net Name : Old Net Name=REG_SEN1 New Net Name=CS_SEN1
+Change Net Name : Old Net Name=REG_SEN2 New Net Name=CS_SEN2
+Change Net Name : Old Net Name=REG_SEN3 New Net Name=CS_SEN3
+Change Net Name : Old Net Name=REG_SEN4 New Net Name=CS_SEN4
+Change Net Name : Old Net Name=REG_SEN5 New Net Name=CS_SEN5
+Change Net Name : Old Net Name=REG_SEN6 New Net Name=CS_SEN6
+Change Net Name : Old Net Name=REG_SEN7 New Net Name=CS_SEN7
+Change Net Name : Old Net Name=REG_SEN8 New Net Name=CS_SEN8
+Change Net Name : Old Net Name=SPI_CLK New Net Name=SCK_SEN
+Change Net Name : Old Net Name=SPI_MISO New Net Name=MISO_SEN
+Change Net Name : Old Net Name=SPI_MOSI New Net Name=MOSI_SEN
+Added Pin To Net: NetName=MISO_SHREG Pin=IC11-3
+Added Pin To Net: NetName=MISO_SHREG Pin=J2-10
+Added Net: Name=MISO_SHREG
+Added Pin To Net: NetName=MOSI_SHREG Pin=IC8-14
+Added Pin To Net: NetName=MOSI_SHREG Pin=J2-5
+Added Net: Name=MOSI_SHREG
+Added Pin To Net: NetName=NetIC8_9 Pin=IC8-9
+Added Pin To Net: NetName=NetIC8_9 Pin=R11-1
+Added Net: Name=NetIC8_9
+Added Pin To Net: NetName=OE Pin=IC8-13
+Added Pin To Net: NetName=OE Pin=J2-8
+Added Net: Name=OE
+Added Pin To Net: NetName=PL Pin=IC11-9
+Added Pin To Net: NetName=PL Pin=J2-9
+Added Net: Name=PL
+Added Pin To Net: NetName=SCK_SHREG Pin=IC8-11
+Added Pin To Net: NetName=SCK_SHREG Pin=IC8-12
+Added Pin To Net: NetName=SCK_SHREG Pin=IC11-10
+Added Pin To Net: NetName=SCK_SHREG Pin=J2-11
+Added Pin To Net: NetName=SCK_SHREG Pin=R9-1
+Added Pin To Net: NetName=SCK_SHREG Pin=R9-2
+Added Net: Name=SCK_SHREG
+Added Pin To Net: NetName=SCLR Pin=IC8-10
+Added Pin To Net: NetName=SCLR Pin=J2-7
+Added Net: Name=SCLR

@@ -1,0 +1,6 @@
+Removed Pin From Net: NetName=CS_OUT Pin=R11-2
+Removed Pin From Net: NetName=CS_OUT Pin=R12-2
+Change Net Name : Old Net Name=CS_OUT New Net Name=CS_OUT_REG
+Added Pin To Net: NetName=CS_OUT_CONN Pin=R11-2
+Added Pin To Net: NetName=CS_OUT_CONN Pin=R12-2
+Added Net: Name=CS_OUT_CONN

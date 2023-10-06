@@ -1,0 +1,16 @@
+Change Component Footprint: Designator=C12 Old Footprint=CAPC1608X90N New Footprint=CAPC2012X145N
+Change Component Comment : Designator=C12 Old Comment=47uF 6.3V New Comment=47uF 10VDC 0805
+Change component parameters: Designator = "C12" ("C12"); Footprint = "CAPC1608X90N"; UniqueID = "\OFSDYJHJ" ("\OFSDYJHJ")
+Change component parameters (AddParameter): Name = "Arrow Part Number"; Value = "GRM21BR61A476ME15K"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Arrow Price/Stock"; Value = "https://www.arrow.com/en/products/grm21br61a476me15k/murata-manufacturing?region=nac"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Datasheet Link"; Value = "http://www.murata.com/~/media/webrenewal/support/library/catalog/products/capacitor/mlcc/c02e.pdf"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Height"; Value = "1.45mm"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Manufacturer_Name"; Value = "Murata Electronics"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Manufacturer_Part_Number"; Value = "GRM21BR61A476ME15K"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Mouser Part Number"; Value = "81-GRM21BR61A476ME5K"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Mouser Price/Stock"; Value = "https://www.mouser.co.uk/ProductDetail/Murata-Electronics/GRM21BR61A476ME15K?qs=hNud%2FORuBR153XPtoO6XtA%3D%3D"; VariantName = "[No Variations]"
+Add Class Member: Failed to add class member : Component LED1 RED_RX
+Add Class Member: Failed to add class member : Component LED6 RED
+Add Class Member: Failed to add class member : Component TP2 5019
+Add Class Member: Failed to add class member : Component TP4 5019
+Add Class Member: Failed to add class member : Component TP18 5019

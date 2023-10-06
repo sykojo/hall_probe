@@ -1,0 +1,12 @@
+Removed Pin From Net: NetName=MCU_UART5_RX Pin=TP15-1
+Removed Pin From Net: NetName=MCU_UART5_TX Pin=TP16-1
+Removed Member From Class: ClassName=MCU Member=TP15
+Removed Member From Class: ClassName=MCU Member=TP16
+Change Component Footprint: Designator=R21 Old Footprint=J1-0603 New Footprint=RESC1608X55N
+Change Component Footprint: Designator=R22 Old Footprint=J1-0603 New Footprint=RESC1608X55N
+Change Component Footprint: Designator=R55 Old Footprint=J1-0603 New Footprint=RESC1608X55N
+Change Component Footprint: Designator=R56 Old Footprint=J1-0603 New Footprint=RESC1608X55N
+Change Component Footprint: Designator=R58 Old Footprint=J1-0603 New Footprint=RESC1608X55N
+Change Component Footprint: Designator=R59 Old Footprint=J1-0603 New Footprint=RESC1608X55N
+Change Component Footprint: Designator=R60 Old Footprint=J1-0603 New Footprint=RESC1608X55N
+Change Component Footprint: Designator=R61 Old Footprint=J1-0603 New Footprint=RESC1608X55N

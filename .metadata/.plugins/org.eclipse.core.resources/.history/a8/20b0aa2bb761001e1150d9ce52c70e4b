@@ -1,0 +1,88 @@
+#include "main.h"
+#include "tmag5170.h"
+
+#define SPI_DELAY 50 //ms
+#define MESSAGE_SIZE 1 //Byte
+
+
+enum OPERATING_MODE{
+	CONFIG_MODE = 0x00,
+	ACTIVE_MEASURMENT = 0x02
+};
+
+class Sensor
+{
+	private:
+		SenRegisters reg;
+		OPERATING_MODE OPERATING_MODE;
+		void senConfig()
+		{
+			this->registerWrite(reg.OPERATING_MODE, OPERATING_MODE.CO); //Active measure mode
+		}
+
+	public:
+
+	void Spi(){};
+
+	void registerWrite(uint8_t addr, uint8_t data)
+	{
+		uint16_t message[2];
+		message = {addr,data};
+		HAL_SPI_Transmit_IT(&hspi1,message,MESSAGE_SIZE,SPI_DELAY);
+	}
+
+	void registerRead(uint8_t addr,uint8_t* pData )
+	{
+		uint16_t message[2];
+		HAL_SPI_Receive_IT(&hspi1,message,MESSAGE_SIZE,SPI_DELAY);
+
+	}
+
+	void selectSensor(uint8_t senAddr)
+	{
+		HAL_SPI_Transmit_IT(hspi2, &senAddr, MESSAGE_SIZE);
+	}
+
+	void registerReadWrite(uint8_t addr,uint8_t* pData )
+	{
+		uint16_t message[2];
+		message = {addr,*pData};
+		HAL_SPI_TransmitReceive_IT(hspi1, pTxData, pRxData, MESSAGE_SIZE);
+	}
+
+	void selectAllSensors()
+	{
+		SenAddresses addr;
+		HAL_SPI_Transmit_IT(hspi2,this->m_allAddr, MESSAGE_SIZE);
+	}
+
+
+};
+
+
+
+void main()
+{
+
+	init();
+	Sensors sen;
+
+	while(1)
+	{
+		//Tell all sensors to meassure
+		sen.selectAllSensors();
+		// Write to register to start measuring
+		for(Sensors address : sen.senAddresses )
+		{
+			// Select sensor
+			selectSensor(adress);
+			//Read measured data from sensor
+
+
+		}
+	}
+}
+
+
+
+

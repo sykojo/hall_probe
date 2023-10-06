@@ -1,0 +1,110 @@
+Removed Pin From Net: NetName=MISO_SEN Pin=J2-4
+Added Component: Designator=C13(CAPC1608X95N)
+Add component (AddParameter): Name = "Arrow Part Number"; Value = "C0603C104J4RAC"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Arrow Price/Stock"; Value = "https://www.arrow.com/en/products/c0603c104j4rac/kemet-corporation?region=nac"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Datasheet Link"; Value = "https://datasheet.datasheetarchive.com/originals/distributors/SFDatasheet-4/sf-00083930.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Height"; Value = "0.95mm"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer_Name"; Value = "KEMET"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer_Part_Number"; Value = "C0603C104J4RAC"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Mouser Part Number"; Value = "80-C0603C104J4RAC"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Mouser Price/Stock"; Value = "https://www.mouser.co.uk/ProductDetail/KEMET/C0603C104J4RAC?qs=sykUljcfnH31MXmq5HGjkg%3D%3D"; VariantName = "[No Variations]"
+Added Component: Designator=C14(CAPC1608X95N)
+Add component (AddParameter): Name = "Arrow Part Number"; Value = "C0603C104J4RAC"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Arrow Price/Stock"; Value = "https://www.arrow.com/en/products/c0603c104j4rac/kemet-corporation?region=nac"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Datasheet Link"; Value = "https://datasheet.datasheetarchive.com/originals/distributors/SFDatasheet-4/sf-00083930.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Height"; Value = "0.95mm"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer_Name"; Value = "KEMET"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer_Part_Number"; Value = "C0603C104J4RAC"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Mouser Part Number"; Value = "80-C0603C104J4RAC"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Mouser Price/Stock"; Value = "https://www.mouser.co.uk/ProductDetail/KEMET/C0603C104J4RAC?qs=sykUljcfnH31MXmq5HGjkg%3D%3D"; VariantName = "[No Variations]"
+Add Component: Footprint Not Found DIOM179X85N
+Add Component: Footprint Not Found DIOM179X85N
+Add Component: Footprint Not Found DIOM179X85N
+Add Component: Footprint Not Found DIOM179X85N
+Add Component: Footprint Not Found DIOM179X85N
+Add Component: Footprint Not Found DIOM179X85N
+Add Component: Footprint Not Found DIOM179X85N
+Add Component: Footprint Not Found DIOM179X85N
+Added Component: Designator=IC9(SOP65P640X120-14N)
+Add component (AddParameter): Name = "Arrow Part Number"; Value = "SN74HCS32PWR"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Arrow Price/Stock"; Value = "https://www.arrow.com/en/products/sn74hcs32pwr/texas-instruments?region=nac"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Datasheet Link"; Value = "https://www.ti.com/lit/gpn/SN74HCS32"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Height"; Value = "1.2mm"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer_Name"; Value = "Texas Instruments"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer_Part_Number"; Value = "SN74HCS32PWR"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Mouser Part Number"; Value = "595-SN74HCS32PWR"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Mouser Price/Stock"; Value = "https://www.mouser.co.uk/ProductDetail/Texas-Instruments/SN74HCS32PWR?qs=vHuUswq2%252BswZ59iFDX%252BOFA%3D%3D"; VariantName = "[No Variations]"
+Added Component: Designator=IC12(SOP65P640X120-14N)
+Add component (AddParameter): Name = "Arrow Part Number"; Value = "SN74HCS32PWR"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Arrow Price/Stock"; Value = "https://www.arrow.com/en/products/sn74hcs32pwr/texas-instruments?region=nac"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Datasheet Link"; Value = "https://www.ti.com/lit/gpn/SN74HCS32"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Height"; Value = "1.2mm"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer_Name"; Value = "Texas Instruments"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer_Part_Number"; Value = "SN74HCS32PWR"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Mouser Part Number"; Value = "595-SN74HCS32PWR"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Mouser Price/Stock"; Value = "https://www.mouser.co.uk/ProductDetail/Texas-Instruments/SN74HCS32PWR?qs=vHuUswq2%252BswZ59iFDX%252BOFA%3D%3D"; VariantName = "[No Variations]"
+Add Component: Footprint Not Found SOT65P210X110-6N
+Add Component: Footprint Not Found 5052781533
+Added Pin To Net: NetName=GND Pin=C13-1
+Added Pin To Net: NetName=+3V3_S Pin=C13-2
+Added Pin To Net: NetName=GND Pin=C14-1
+Added Pin To Net: NetName=+3V3_S Pin=C14-2
+Add Pin To Net: Unknown Pin: Pin D1-2
+Add Pin To Net: Unknown Pin: Pin D2-2
+Add Pin To Net: Unknown Pin: Pin D3-2
+Add Pin To Net: Unknown Pin: Pin D4-2
+Add Pin To Net: Unknown Pin: Pin D5-2
+Add Pin To Net: Unknown Pin: Pin D6-2
+Add Pin To Net: Unknown Pin: Pin D7-2
+Add Pin To Net: Unknown Pin: Pin D8-2
+Added Pin To Net: NetName=ALERT_SEN1 Pin=IC9-1
+Added Pin To Net: NetName=ALERT_SEN2 Pin=IC9-2
+Added Pin To Net: NetName=ALERT_SEN3 Pin=IC9-4
+Added Pin To Net: NetName=ALERT_SEN4 Pin=IC9-5
+Added Pin To Net: NetName=GND Pin=IC9-7
+Added Pin To Net: NetName=ALERT_SEN8 Pin=IC9-9
+Added Pin To Net: NetName=ALERT_SEN7 Pin=IC9-10
+Added Pin To Net: NetName=ALERT_SEN6 Pin=IC9-12
+Added Pin To Net: NetName=ALERT_SEN5 Pin=IC9-13
+Added Pin To Net: NetName=+3V3_S Pin=IC9-14
+Added Pin To Net: NetName=GND Pin=IC12-7
+Added Pin To Net: NetName=+3V3_S Pin=IC12-14
+Added Pin To Net: NetName=ALERT_IT Pin=IC12-6
+Added Pin To Net: NetName=ALERT_IT Pin=J2-12
+Added Net: Name=ALERT_IT
+Added Pin To Net: NetName=MISO_SEN_K Pin=J2-4
+Added Net: Name=MISO_SEN_K
+Added Pin To Net: NetName=NetIC9_3 Pin=IC9-3
+Added Pin To Net: NetName=NetIC9_3 Pin=IC12-2
+Added Net: Name=NetIC9_3
+Added Pin To Net: NetName=NetIC9_6 Pin=IC9-6
+Added Pin To Net: NetName=NetIC9_6 Pin=IC12-1
+Added Net: Name=NetIC9_6
+Added Pin To Net: NetName=NetIC9_8 Pin=IC9-8
+Added Pin To Net: NetName=NetIC9_8 Pin=IC12-13
+Added Net: Name=NetIC9_8
+Added Pin To Net: NetName=NetIC9_11 Pin=IC9-11
+Added Pin To Net: NetName=NetIC9_11 Pin=IC12-12
+Added Net: Name=NetIC9_11
+Added Pin To Net: NetName=NetIC12_3 Pin=IC12-3
+Added Pin To Net: NetName=NetIC12_3 Pin=IC12-4
+Added Net: Name=NetIC12_3
+Added Pin To Net: NetName=NetIC12_5 Pin=IC12-5
+Added Pin To Net: NetName=NetIC12_5 Pin=IC12-9
+Added Pin To Net: NetName=NetIC12_5 Pin=IC12-10
+Added Pin To Net: NetName=NetIC12_5 Pin=IC12-11
+Added Net: Name=NetIC12_5
+Added Member To Class: ClassName=SENSORS_SMALL_SCH Member=Component C13 100nF
+Added Member To Class: ClassName=SENSORS_SMALL_SCH Member=Component C14 100nF
+Add Class Member: Failed to add class member : Component D1 CDBU0130L
+Add Class Member: Failed to add class member : Component D2 CDBU0130L
+Add Class Member: Failed to add class member : Component D3 CDBU0130L
+Add Class Member: Failed to add class member : Component D4 CDBU0130L
+Add Class Member: Failed to add class member : Component D5 CDBU0130L
+Add Class Member: Failed to add class member : Component D6 CDBU0130L
+Add Class Member: Failed to add class member : Component D7 CDBU0130L
+Add Class Member: Failed to add class member : Component D8 CDBU0130L
+Added Member To Class: ClassName=SENSORS_SMALL_SCH Member=Component IC9 SN74HCS32PWR
+Added Member To Class: ClassName=SENSORS_SMALL_SCH Member=Component IC12 SN74HCS32PWR
+Add Class Member: Failed to add class member : Component IC13 SN74LVC2G04DCKT
+Add Class Member: Failed to add class member : Component J1 505278-1533

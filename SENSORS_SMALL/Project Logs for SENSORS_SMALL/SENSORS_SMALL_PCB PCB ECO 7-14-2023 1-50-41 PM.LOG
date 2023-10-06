@@ -1,0 +1,6 @@
+Removed Pin From Net: NetName=REG_RCK Pin=R10-1
+Removed Pin From Net: NetName=REG_SCK Pin=R10-2
+Removed Member From Class: ClassName=SENSORS_SMALL_SCH Member=R10
+Added Member To Class: ClassName=SENSORS_SMALL_SCH Member=Component C8 0.01uF
+Added Member To Class: ClassName=SENSORS_SMALL_SCH Member=Component IC10 TMAG5170A1QDGKR
+Added Member To Class: ClassName=SENSORS_SMALL_SCH Member=Component R8 10K

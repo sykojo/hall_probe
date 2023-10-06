@@ -1,0 +1,20 @@
+Added Component: Designator=IC11(SOP65P640X110-16N)
+Add component (AddParameter): Name = "Arrow Part Number"; Value = "HEF4021BTTJ"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Arrow Price/Stock"; Value = "https://www.arrow.com/en/products/hef4021bttj/nexperia?region=nac"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Datasheet Link"; Value = "https://assets.nexperia.com/documents/data-sheet/HEF4021B.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Height"; Value = "1.1mm"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer_Name"; Value = "Nexperia"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer_Part_Number"; Value = "HEF4021BTTJ"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Mouser Part Number"; Value = "771-HEF4021BTTJ"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Mouser Price/Stock"; Value = "https://www.mouser.co.uk/ProductDetail/Nexperia/HEF4021BTTJ?qs=Yna0arPQ0CSy4j38ShusdQ%3D%3D"; VariantName = "[No Variations]"
+Added Component: Designator=J2(23398009)
+Add component (AddParameter): Name = "Arrow Part Number"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Arrow Price/Stock"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Datasheet Link"; Value = "https://www.mouser.ca/datasheet/2/418/8/ENG_CD_2339800_A4-2045884.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Height"; Value = "22.9mm"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer_Name"; Value = "TE Connectivity"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer_Part_Number"; Value = "2339800-9"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Mouser Part Number"; Value = "571-2339800-9"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Mouser Price/Stock"; Value = "https://www.mouser.co.uk/ProductDetail/TE-Connectivity/2339800-9?qs=eP2BKZSCXI7ON64R%252BA7AWg%3D%3D"; VariantName = "[No Variations]"
+Added Member To Class: ClassName=SENSORS_SMALL_SCH Member=Component IC11 HEF4021BTTJ
+Added Member To Class: ClassName=SENSORS_SMALL_SCH Member=Component J2 2339800-9

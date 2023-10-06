@@ -1,0 +1,10 @@
+Added Component: Designator=J3(HDRV12W69P254_2X6_1483X488X1074P)
+Add component (AddParameter): Name = "Arrow Part Number"; Value = "87227-6"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Arrow Price/Stock"; Value = "https://www.arrow.com/en/products/87227-6/te-connectivity"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Datasheet Link"; Value = "https://www.te.com/commerce/DocumentDelivery/DDEController?Action=srchrtrv&DocNm=87227&DocType=Customer+Drawing&DocLang=English&DocFormat=pdf&PartCntxt=87227-6"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Height"; Value = "10.744mm"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer_Name"; Value = "TE Connectivity"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer_Part_Number"; Value = "87227-6"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Mouser Part Number"; Value = "571-872276"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Mouser Price/Stock"; Value = "https://www.mouser.co.uk/ProductDetail/TE-Connectivity/87227-6?qs=X1mjqRbeMc44XGv5Gi39%252Bg%3D%3D"; VariantName = "[No Variations]"
+Added Member To Class: ClassName=SENSORS_SMALL_SCH Member=Component J3 87227-6

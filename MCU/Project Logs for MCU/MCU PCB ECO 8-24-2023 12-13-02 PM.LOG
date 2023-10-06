@@ -1,0 +1,8 @@
+Removed Pin From Net: NetName=GND Pin=C17-1
+Removed Pin From Net: NetName=+3V3_S Pin=C17-2
+Removed Member From Class: ClassName=MCU Member=C17
+Add Class Member: Failed to add class member : Component LED1 RED_RX
+Add Class Member: Failed to add class member : Component LED2 RED_TX
+Add Class Member: Failed to add class member : Component LED6 RED
+Add Class Member: Failed to add class member : Component TP2 5019
+Add Class Member: Failed to add class member : Component TP4 5019

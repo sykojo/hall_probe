@@ -1,0 +1,18 @@
+Removed Member From Class: ClassName=U_LED_STATUS Member=5V
+Added Component: Designator=C12(CAPC1608X90N)
+Add component (AddParameter): Name = "Arrow Part Number"; Value = "GRM188R60J476ME01D"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Arrow Price/Stock"; Value = "https://www.arrow.com/en/products/grm188r60j476me01d/murata-manufacturing?region=nac"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Datasheet Link"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Height"; Value = "0.9mm"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer_Name"; Value = "Murata Electronics"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer_Part_Number"; Value = "GRM188R60J476ME01D"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Mouser Part Number"; Value = "81-GRM188R60J476ME01"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Mouser Price/Stock"; Value = "https://www.mouser.co.uk/ProductDetail/Murata-Electronics/GRM188R60J476ME01D?qs=pUKx8fyJudCK31TI9jwJqA%3D%3D"; VariantName = "[No Variations]"
+Added Pin To Net: NetName=GND Pin=C12-1
+Added Pin To Net: NetName=+3V3_S Pin=C12-2
+Added Member To Class: ClassName=MCU Member=Component C12 47uF 6.3V
+Add Class Member: Failed to add class member : Component LED1 RED_RX
+Add Class Member: Failed to add class member : Component LED2 RED_TX
+Add Class Member: Failed to add class member : Component LED6 RED
+Add Class Member: Failed to add class member : Component TP2 5019
+Add Class Member: Failed to add class member : Component TP6 5019
