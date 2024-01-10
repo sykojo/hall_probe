@@ -1,0 +1,5 @@
+Removed Pin From Net: NetName=SCK_SHREG Pin=IC8-12
+Removed Pin From Net: NetName=SCK_SHREG Pin=R9-1
+Added Pin To Net: NetName=RCK_SHREG Pin=IC8-12
+Added Pin To Net: NetName=RCK_SHREG Pin=R9-1
+Added Net: Name=RCK_SHREG

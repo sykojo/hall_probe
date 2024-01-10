@@ -19,7 +19,7 @@ REGISTERS reg;
 
 struct DEVICE_CONFIG
 {
-	uint8_t MAG_TEMPCO;       //8-9 bit
+	uint8_t MAG_TEMPCO      //8-9 bit
 };
 
 class Sensor

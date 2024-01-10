@@ -1,0 +1,9 @@
+Change Component Designator: OldDesignator=J? NewDesignator=J4
+Added Pin To Net: NetName=+5V Pin=R18-2
+Added Pin To Net: NetName=+3V3 Pin=R19-2
+Added Pin To Net: NetName=LED_ERROR Pin=MCU-29
+Added Pin To Net: NetName=LED_ERROR Pin=R16-2
+Added Net: Name=LED_ERROR
+Added Pin To Net: NetName=LED_MEASURING Pin=MCU-28
+Added Pin To Net: NetName=LED_MEASURING Pin=R17-2
+Added Net: Name=LED_MEASURING

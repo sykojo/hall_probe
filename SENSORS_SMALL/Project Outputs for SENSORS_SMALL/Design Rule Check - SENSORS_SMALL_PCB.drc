@@ -1,9 +1,9 @@
 Protel Design System Design Rule Check
 PCB File : C:\Users\sykojo\Documents\_electronics\hall_probe\SENSORS_SMALL\SENSORS_SMALL_PCB.PcbDoc
-Date     : 8/11/2023
-Time     : 2:11:47 PM
+Date     : 11/6/2023
+Time     : 10:50:10 PM
 
-Processing Rule : Clearance Constraint (Gap=4.921mil) (All),(All)
+Processing Rule : Clearance Constraint (Gap=7.874mil) (All),(All)
 Rule Violations :0
 
 Processing Rule : Short-Circuit Constraint (Allowed=No) (All),(All)
@@ -15,7 +15,7 @@ Rule Violations :0
 Processing Rule : Modified Polygon (Allow modified: No), (Allow shelved: No)
 Rule Violations :0
 
-Processing Rule : Width Constraint (Min=4.921mil) (Max=71497.938mil) (Preferred=10mil) (All)
+Processing Rule : Width Constraint (Min=7.874mil) (Max=71497.938mil) (Preferred=10mil) (All)
 Rule Violations :0
 
 Processing Rule : Power Plane Connect Rule(Direct Connect )(Expansion=20mil) (Conductor Width=10mil) (Air Gap=10mil) (Entries=4) (InPadClass('PowerPads'))
@@ -25,10 +25,10 @@ Processing Rule : Power Plane Connect Rule(Relief Connect )(Expansion=11.811mil)
 Rule Violations :0
 
 Processing Rule : Minimum Annular Ring (Minimum=7.874mil) (All)
-   Violation between Minimum Annular Ring: (5.906mil < 7.874mil) Pad Free-2(688.976mil,688.976mil) on Multi-Layer (Annular Ring=5.906mil) On (Top Layer)
-   Violation between Minimum Annular Ring: (5.906mil < 7.874mil) Pad Free-3(688.976mil,216.535mil) on Multi-Layer (Annular Ring=5.906mil) On (Top Layer)
-   Violation between Minimum Annular Ring: (5.906mil < 7.874mil) Pad Free-4(196.85mil,216.535mil) on Multi-Layer (Annular Ring=5.906mil) On (Top Layer)
-   Violation between Minimum Annular Ring: (5.906mil < 7.874mil) Pad Free-5(196.85mil,688.976mil) on Multi-Layer (Annular Ring=5.906mil) On (Top Layer)
+   Violation between Minimum Annular Ring: (5.906mil < 7.874mil) Pad Free-2(866.142mil,236.22mil) on Multi-Layer (Annular Ring=5.906mil) On (Top Layer)
+   Violation between Minimum Annular Ring: (5.906mil < 7.874mil) Pad Free-3(866.142mil,-236.22mil) on Multi-Layer (Annular Ring=5.906mil) On (Top Layer)
+   Violation between Minimum Annular Ring: (5.906mil < 7.874mil) Pad Free-4(492.126mil,-236.22mil) on Multi-Layer (Annular Ring=5.906mil) On (Top Layer)
+   Violation between Minimum Annular Ring: (5.906mil < 7.874mil) Pad Free-5(492.126mil,236.22mil) on Multi-Layer (Annular Ring=5.906mil) On (Top Layer)
 Rule Violations :4
 
 Processing Rule : Hole Size Constraint (Min=3.937mil) (Max=248.031mil) (All)
@@ -50,14 +50,14 @@ Processing Rule : Net Antennae (Tolerance=0mil) (All)
 Rule Violations :0
 
 Processing Rule : Board Clearance Constraint (Gap=0mil) (All)
-   Violation between Board Outline Clearance(Outline Edge): (Collision < 7.874mil) Between Board Edge And Track (-198.425mil,194.488mil)(-198.425mil,714.173mil) on Top Overlay 
-   Violation between Board Outline Clearance(Outline Edge): (Collision < 7.874mil) Between Board Edge And Track (-198.425mil,194.488mil)(59.055mil,194.488mil) on Top Overlay 
-   Violation between Board Outline Clearance(Outline Edge): (Collision < 7.874mil) Between Board Edge And Track (-198.425mil,714.173mil)(-94.488mil,714.173mil) on Top Overlay 
-   Violation between Board Outline Clearance(Outline Edge): (Collision < 7.874mil) Between Board Edge And Track (-426.772mil,254.331mil)(-198.425mil,254.331mil) on Top Overlay 
-   Violation between Board Outline Clearance(Outline Edge): (Collision < 7.874mil) Between Board Edge And Track (-426.772mil,354.331mil)(-198.425mil,354.331mil) on Top Overlay 
-   Violation between Board Outline Clearance(Outline Edge): (Collision < 7.874mil) Between Board Edge And Track (-426.772mil,454.331mil)(-198.425mil,454.331mil) on Top Overlay 
-   Violation between Board Outline Clearance(Outline Edge): (Collision < 7.874mil) Between Board Edge And Track (-426.772mil,554.331mil)(-198.425mil,554.331mil) on Top Overlay 
-   Violation between Board Outline Clearance(Outline Edge): (Collision < 7.874mil) Between Board Edge And Track (-426.772mil,654.331mil)(-198.425mil,654.331mil) on Top Overlay 
+   Violation between Board Outline Clearance(Outline Edge): (Collision < 11.811mil) Between Board Edge And Track (-159.055mil,1.575mil)(81.102mil,1.575mil) on Top Overlay 
+   Violation between Board Outline Clearance(Outline Edge): (Collision < 11.811mil) Between Board Edge And Track (-159.055mil,101.575mil)(81.102mil,101.575mil) on Top Overlay 
+   Violation between Board Outline Clearance(Outline Edge): (Collision < 11.811mil) Between Board Edge And Track (-159.055mil,-198.425mil)(81.102mil,-198.425mil) on Top Overlay 
+   Violation between Board Outline Clearance(Outline Edge): (Collision < 11.811mil) Between Board Edge And Track (-159.055mil,201.575mil)(81.102mil,201.575mil) on Top Overlay 
+   Violation between Board Outline Clearance(Outline Edge): (Collision < 11.811mil) Between Board Edge And Track (-159.055mil,-98.425mil)(81.102mil,-98.425mil) on Top Overlay 
+   Violation between Board Outline Clearance(Outline Edge): (Collision < 11.811mil) Between Board Edge And Track (81.102mil,-258.268mil)(185.039mil,-258.268mil) on Top Overlay 
+   Violation between Board Outline Clearance(Outline Edge): (Collision < 11.811mil) Between Board Edge And Track (81.102mil,-258.268mil)(81.102mil,261.417mil) on Top Overlay 
+   Violation between Board Outline Clearance(Outline Edge): (Collision < 11.811mil) Between Board Edge And Track (81.102mil,261.417mil)(374.016mil,261.417mil) on Top Overlay 
 Rule Violations :8
 
 Processing Rule : Height Constraint (Min=0mil) (Max=71497.938mil) (Prefered=500mil) (All)
@@ -66,4 +66,4 @@ Rule Violations :0
 
 Violations Detected : 12
 Waived Violations : 0
-Time Elapsed        : 00:00:02
+Time Elapsed        : 00:00:01

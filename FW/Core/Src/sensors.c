@@ -1,0 +1,128 @@
+#include "stdint.h"
+#include "sensors.h"
+#include "main.h"
+#include "spi.h"
+#include "spi_handler.h"
+
+void writeToRegister(uint16_t* pRegData,REGISTER_FEATURE pos,uint8_t value)
+{
+        value <<= pos;
+        *pRegData|=value;
+}
+
+
+Sensor sensor_init(uint32_t adr)
+{
+    Sensor sen;
+    sen.adr = adr;
+
+    registers_adr_config(&sen);
+    uint8_t crc_disable[4] = {0x0F,00,04,07};
+    HAL_SPI_Transmit(&hspi1, crc_disable, 4, 50);
+    //test_config(&sen);
+    //device_config(&sen);
+    //system_config(&sen);
+    return sen;
+}
+
+
+void sensor_power_off()
+{
+	HAL_GPIO_WritePin(SEN_V_ENABLE_GPIO_Port, SEN_V_ENABLE_Pin,1);
+}
+
+void sensor_power_on()
+{
+	HAL_GPIO_WritePin(SEN_V_ENABLE_GPIO_Port, SEN_V_ENABLE_Pin,0);
+}
+
+uint8_t calc_crc(REGISTER_ADR adr,uint16_t* data)
+{
+	uint8_t xor_result;
+	uint8_t crc_polynomial=0x13;
+	uint8_t crc_reg = 0x0F;
+	uint8_t message[4] = {adr,(*data)>>8,*data,crc_reg};
+	uint8_t crc_msb;
+	uint8_t msg_msb;
+	int j =0;
+	for(int i=31;i>=0;i--)
+	{
+		crc_msb = crc_reg >> 3;
+		msg_msb = (message[j]>>(i%8))&0x01;
+		xor_result = crc_msb ^ msg_msb;
+		crc_reg = crc_reg << 1;
+
+		if(xor_result)
+		{
+			crc_reg = crc_reg ^ crc_polynomial;
+		}
+
+		if((i%8)==0){ j++; }
+	}
+	return crc_reg & 0x0F;
+}
+
+void registers_adr_config(Sensor* sen)
+{
+	sen->TEST_CONFIG.adr = TEST_CONFIG;
+	sen->TEST_CONFIG.data = 0;
+	sen->DEVICE_CONFIG.adr = DEVICE_CONFIG;
+	sen->DEVICE_CONFIG.data = 0;
+	sen->SYSTEM_CONFIG.adr = SYSTEM_CONFIG;
+	sen->SYSTEM_CONFIG.data = 0;
+
+}
+
+void test_config(Sensor* sen)
+{
+	uint16_t* pRegData= &(sen->TEST_CONFIG.data);
+	writeToRegister(pRegData, CRC_DIS, 1);
+}
+
+void device_config(Sensor* sen)
+{
+	uint16_t* pRegData= &(sen->DEVICE_CONFIG.data);
+	writeToRegister(pRegData, CONV_AVG, 0x00); // 1X additional sampling
+	writeToRegister(pRegData, MAG_TEMPCO,0x00); //Temperature coefficient 0%
+	writeToRegister(pRegData, OPERATING_MODE, 0x00); //Continuous conversion
+	writeToRegister(pRegData, T_CH_EN, 0x01);
+	writeToRegister(pRegData, T_RATE, 0x01);
+	writeToRegister(pRegData, T_HLT_EN, 0x00);
+	writeToRegister(pRegData, Z_HLT_EN, 0);
+	writeToRegister(pRegData, Y_HLT_EN, 0);
+	writeToRegister(pRegData, X_HLT_EN, 0);
+
+	spi_write_reg(sen->DEVICE_CONFIG.adr, pRegData);
+
+}
+
+void system_config(Sensor* sen)
+{
+	uint16_t* pRegData= &(sen->SYSTEM_CONFIG.data);
+	writeToRegister(pRegData, DIAG_SEL, 0x00);
+	writeToRegister(pRegData, TRIGGER_MODE, 0x00); //Conversion on CS pulse
+	writeToRegister(pRegData, DATA_TYPE, 0x00);
+	writeToRegister(pRegData, DIAG_EN, 0x00);
+
+	spi_write_reg(sen->SYSTEM_CONFIG.adr, pRegData);
+}
+
+void select_sensor(uint8_t adr)
+{
+	clear_sh_reg();
+	uint16_t message = ~(1 << (8-adr + 7));
+	HAL_SPI_Transmit(&hspi2, (uint8_t *)&message, 2, 50);
+}
+
+void clear_sh_reg( )
+{
+	HAL_GPIO_WritePin(SCLR_GPIO_Port, SCLR_Pin,1);
+	HAL_Delay(1);
+
+}
+void set_sh_reg_output(uint32_t value)
+{
+	HAL_GPIO_WritePin(OE_GPIO_Port, OE_Pin, value);
+}
+
+

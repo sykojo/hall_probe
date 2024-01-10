@@ -1,0 +1,9 @@
+Added Pin To Net: NetName=+3V3_S Pin=J?-1
+Added Pin To Net: NetName=GND Pin=J?-2
+Added Pin To Net: NetName=MOSI_SHREG Pin=J?-4
+Added Pin To Net: NetName=SCK_SHREG Pin=J?-5
+Added Pin To Net: NetName=SCLR Pin=J?-6
+Added Pin To Net: NetName=OE Pin=J?-7
+Added Pin To Net: NetName=MOSI_SEN Pin=J?-8
+Added Pin To Net: NetName=MISO_SEN Pin=J?-9
+Added Pin To Net: NetName=SCK_SEN Pin=J?-10

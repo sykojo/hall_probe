@@ -1,0 +1,2 @@
+Remove Pin=MCU-37 From Net=S\ E\ N\ S\ O\ R\ S\ _\ E\ N\ A\ B\ L\ E\
+Change Pin Designator/Name:  Old Designator=MCU-62 Old Name=PB9 New Designator =PC6 New Name=37

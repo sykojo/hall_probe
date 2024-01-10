@@ -1,0 +1,5 @@
+Added Pin To Net: NetName=LED_STATUS Pin=MCU-33
+Added Pin To Net: NetName=LED_STATUS Pin=R15-2
+Added Net: Name=LED_STATUS
+Added Pin To Net: NetName=MCU_LED_MEASURING Pin=R17-2
+Added Net: Name=MCU_LED_MEASURING

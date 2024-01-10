@@ -21,7 +21,7 @@ TargetOutputMedium=Push to AISLER
 VariantName=[No Variations]
 VariantScope=1
 CurrentConfigurationName=
-TargetPrinter=Microsoft Print to PDF
+TargetPrinter=HP LaserJet M14-M17
 PrinterOptions=Record=PrinterOptions|Copies=1|Duplex=1|TrueTypeOptions=3|Collate=1|PrintJobKind=1|PrintWhat=1
 OutputMedium1=Push to AISLER
 OutputMedium1_Type=GeneratedFiles

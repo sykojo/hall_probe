@@ -1,0 +1,4 @@
+Removed Pin From Net: NetName=OE Pin=MCU-26
+Removed Pin From Net: NetName=SCLR Pin=MCU-27
+Added Pin To Net: NetName=OE Pin=MCU-24
+Added Pin To Net: NetName=SCLR Pin=MCU-25

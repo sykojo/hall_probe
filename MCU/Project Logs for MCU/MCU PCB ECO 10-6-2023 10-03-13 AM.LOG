@@ -1,0 +1,4 @@
+Removed Pin From Net: NetName=OE Pin=J?-7
+Removed Pin From Net: NetName=MOSI_SEN Pin=J?-8
+Added Pin To Net: NetName=MOSI_SEN Pin=J?-7
+Added Pin To Net: NetName=OE Pin=J?-8

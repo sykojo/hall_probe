@@ -1,0 +1,6 @@
+Removed Pin From Net: NetName=GND Pin=IC?-2
+Removed Pin From Net: NetName=GND Pin=IC?-3
+Removed Pin From Net: NetName=+3V3_S Pin=IC?-5
+Removed Member From Class: ClassName=SENSORS_SMALL_SCH Member=Boot pin?
+Removed Member From Class: ClassName=SENSORS_SMALL_SCH Member=IC?
+Change Component Designator: OldDesignator=J? NewDesignator=J1

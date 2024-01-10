@@ -1,0 +1,12 @@
+../Core/Src/sensors.c:7:6:writeToRegister	16	static
+../Core/Src/sensors.c:14:8:sensor_init	112	static
+../Core/Src/sensors.c:29:6:sensor_power_off	8	static
+../Core/Src/sensors.c:34:6:sensor_power_on	8	static
+../Core/Src/sensors.c:39:9:calc_crc	40	static
+../Core/Src/sensors.c:65:6:registers_adr_config	16	static
+../Core/Src/sensors.c:76:6:test_config	24	static
+../Core/Src/sensors.c:82:6:device_config	24	static
+../Core/Src/sensors.c:99:6:system_config	24	static
+../Core/Src/sensors.c:110:6:select_sensor	24	static
+../Core/Src/sensors.c:117:6:clear_sh_reg	8	static
+../Core/Src/sensors.c:123:6:set_sh_reg_output	16	static
