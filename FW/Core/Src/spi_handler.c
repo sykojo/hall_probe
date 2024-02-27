@@ -6,14 +6,14 @@
 
 #define SPI_MESSAGE_LENGTH 4
 
-uint16_t spi_read_reg(uint8_t regAddr, uint16_t *stat)
+uint16_t spi_read_reg(uint8_t regAdr, uint16_t *stat)
 {
 	uint8_t txData[4]={0x00};
 	uint8_t rxData[4]={0x00};
 	uint16_t msg;
 	HAL_StatusTypeDef status;
-	regAddr |= 0x80; //MSB 1 for reading
-	txData[0] = regAddr;
+	regAdr |= 0x80; //MSB 1 for reading
+	txData[0] = regAdr;
 	status = HAL_SPI_TransmitReceive(&hspi1,txData,rxData,4,50);
 	*stat = (rxData[0]<<8) + rxData[3];
 	msg = ((rxData[1]<<8) + rxData[2]);
@@ -36,5 +36,20 @@ void displayTempData(uint16_t data)
 {
 	printf("%d",data);
 }
+/*
+SensorMeasuredData spi_read_measured_data(Sensor* sen)
+{
+	uint8_t txData[4]={0};
+	uint8_t rxData[4]={0};
+	uint16_t msg=0;
+	SensorMeasuredData data;
 
+
+	regAdr |= 0x80;
+	txData[0] = regAdr;
+	HAL_SPI_TransmitReceive(&hspi1, txData, rxData, 4, 10);
+
+
+}
+*/
 

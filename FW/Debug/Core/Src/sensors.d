@@ -24,7 +24,7 @@ Core/Src/sensors.o: ../Core/Src/sensors.c ../Core/Inc/sensors.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_spi.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h \
- ../Core/Inc/spi.h ../Core/Inc/main.h ../Core/Inc/spi_handler.h \
+ ../Core/Inc/main.h ../Core/Inc/spi.h ../Core/Inc/spi_handler.h \
  ../Core/Inc/spi_handler.h ../Core/Inc/spi.h ../Core/Inc/sensors.h
 ../Core/Inc/sensors.h:
 ../Core/Inc/main.h:
@@ -53,8 +53,8 @@ Core/Src/sensors.o: ../Core/Src/sensors.c ../Core/Inc/sensors.h \
 ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h:
 ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_spi.h:
 ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h:
-../Core/Inc/spi.h:
 ../Core/Inc/main.h:
+../Core/Inc/spi.h:
 ../Core/Inc/spi_handler.h:
 ../Core/Inc/spi_handler.h:
 ../Core/Inc/spi.h:

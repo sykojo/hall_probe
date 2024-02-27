@@ -1,0 +1,13 @@
+/*
+ * uart_bridge.h
+ *
+ *  Created on: Feb 21, 2024
+ *      Author: sykojo
+ */
+
+#ifndef INC_UART_BRIDGE_H_
+#define INC_UART_BRIDGE_H_
+
+
+
+#endif /* INC_UART_BRIDGE_H_ */

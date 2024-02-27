@@ -6,7 +6,7 @@
 #include "sensors.h"
 #include "main.h"
 
-uint16_t spi_read_reg(uint8_t regAddr, uint16_t *stat);
+uint16_t spi_read_reg(uint8_t regAdr, uint16_t *stat);
 void spi_write_reg(uint8_t regAdr,uint16_t* pRegData);
 void displayTempData(uint16_t data);
 

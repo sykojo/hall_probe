@@ -63,8 +63,8 @@ void Error_Handler(void);
 #define SCLR_GPIO_Port GPIOC
 #define LED_MEASURING_Pin GPIO_PIN_2
 #define LED_MEASURING_GPIO_Port GPIOB
-#define PL_Pin GPIO_PIN_10
-#define PL_GPIO_Port GPIOB
+#define LED_ERROR_Pin GPIO_PIN_10
+#define LED_ERROR_GPIO_Port GPIOB
 #define LED_STATUS_Pin GPIO_PIN_12
 #define LED_STATUS_GPIO_Port GPIOB
 #define SCK_SHREG_Pin GPIO_PIN_13
@@ -81,6 +81,8 @@ void Error_Handler(void);
 #define NRTS_GPIO_Port GPIOC
 #define UART_RESET__Pin GPIO_PIN_9
 #define UART_RESET__GPIO_Port GPIOC
+#define RI__Pin GPIO_PIN_12
+#define RI__GPIO_Port GPIOA
 #define BUTTON_Pin GPIO_PIN_8
 #define BUTTON_GPIO_Port GPIOB
 

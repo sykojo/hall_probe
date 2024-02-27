@@ -13,3 +13,33 @@ Command-line arguments:  -os win32 -ws win32 -arch x86_64
 
 !ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2023-11-26 17:19:20.272
 !MESSAGE Started RMI Server, listening on port 41337
+!SESSION 2024-02-14 17:41:33.352 -----------------------------------------------
+eclipse.buildId=Version 1.14.1
+java.version=17.0.8.1
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2024-02-14 17:41:44.286
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2024-02-14 17:41:44.292
+!MESSAGE Log4j2 initialized with config file C:\Users\sykojo\Documents\_electronics\hall_probe\hall_probe_FW\.metadata\.log4j2.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2024-02-14 17:41:46.778
+!MESSAGE Started RMI Server, listening on port 41337
+!SESSION 2024-02-21 09:46:46.683 -----------------------------------------------
+eclipse.buildId=Version 1.14.1
+java.version=17.0.8.1
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2024-02-21 09:47:05.776
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2024-02-21 09:47:05.783
+!MESSAGE Log4j2 initialized with config file C:\Users\sykojo\Documents\_electronics\hall_probe\hall_probe_FW\.metadata\.log4j2.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2024-02-21 09:47:09.623
+!MESSAGE Started RMI Server, listening on port 41337
