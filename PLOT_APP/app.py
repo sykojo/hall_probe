@@ -1,39 +1,66 @@
-import tkinter as tk
-import matplotlib
-from matplotlib.figure import Figure
-from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
+import sys
+from PyQt5.QtWidgets import QApplication,QMainWindow,QWidget,QFileDialog
+from PyQt5.QtCore import QTimer, QThread
+from matplotlib.backends.backend_qt5agg import FigureCanvasQTAgg as FigureCanvas
+import matplotlib.pyplot as plt
 import numpy as np
-
-def plot():
-    fig = Figure(figsize=(5,5),dpi=100)
-    
-    data_x = np.random.normal(50,25,300)
-    data_y = np.random.normal(50,25,300)
-    
-    plot1 = fig.add_subplot()
-    plot1.scatter(data_x,data_y)
-    
-    canvas = FigureCanvasTkAgg(fig,master=window)
-    canvas.draw()
-    
-    canvas.get_tk_widget().pack()
-    
+from threading import Thread
+from time import sleep
+from data_process import SerialData
 
 
-window = tk.Tk()
-window.title("Hall Probe")
-'''
-left_frame = tk.Frame(window,width=640,height=1080,bg="purple").pack(side="left")
-right_frame = tk.Frame(window,width=1280,height=1080).pack(side="right")
+class GraphPlotterApp(QMainWindow):
+    def __init__(self):
+        super().__init__()
+        self.running = False
+        self.init_ui()
+        self.serialData=SerialData(self.running)
+        self.redrawTimer = QTimer(self)
+        self.redrawTimer.timeout.connect(self.update_plot)
+        self.redrawTimer.start(1000)
+        #self.t_readSerial = Thread(target=self.serialData.read_serial,args=(self.serialData.dataAreReady,))
+        self.t_readSerial = QThread()
+        #self.t_waitAndPlot = Thread(target=self.plot_data)
+        
 
-label_left = tk.Label(left_frame,text="Left").pack(in_=left_frame)
-label_right = tk.Label(right_frame,text="Right").pack(in_=right_frame)
-'''
-test = tk.Label(window, text="red", bg="red", fg="white")
-test.pack(padx=5, pady=15, side=tk.LEFT)
-test = tk.Label(window, text="green", bg="green", fg="white")
-test.pack(padx=5, pady=20, side=tk.LEFT)
-test = tk.Label(window, text="purple", bg="purple", fg="white")
-test.pack(padx=5, pady=20, side=tk.LEFT)
+    def init_ui(self):
+        self.setWindowTitle("Hall Probe")
+        self.setGeometry(100,100,800,600)
+        self.setupMenuBar()
+        self.setupPlotCanvas()
+        self.running=True
 
-window.mainloop()
+    def setupMenuBar(self):
+            menu_bar=self.menuBar()             #Vytvoření menu
+            file_menu=menu_bar.addMenu("Settings")  #Přidánízáložky do menu
+            moznosti_menu = menu_bar.addMenu("Moznosti")
+    
+    def setupPlotCanvas(self):
+        self.figure = plt.figure()
+        self.canvas = FigureCanvas(self.figure)
+        self.setCentralWidget(self.canvas) 
+
+    def update_plot(self):
+        print(f"Data: {self.serialData.senData1.x} \n")
+    ''' 
+    def plot_data(self):
+        while self.running:  
+            #self.serialData.read_serial(self.serialData.dataAreReady)          
+            with self.serialData.dataAreReady:
+                print("Main thread waiting for data...")
+                self.serialData.dataAreReady.wait()
+                print("Notified... plotting the data")
+                print(f"Data: {self.serialData.senData1.x} \n")
+                sleep(1)
+                '''
+    
+     
+
+                
+
+
+             
+         
+
+        
+
