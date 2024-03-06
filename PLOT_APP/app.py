@@ -1,58 +1,175 @@
 import sys
-from PyQt5.QtWidgets import QApplication,QMainWindow,QWidget,QFileDialog
-from PyQt5.QtCore import QTimer, QThread
+from PyQt5.QtWidgets import QApplication,QMainWindow,QWidget,QFileDialog,QGridLayout,QPushButton,QToolBar,QDockWidget,QTabBar,QTabWidget,QSizePolicy
+from PyQt5.QtCore import QObject, QTimer, QThread,pyqtSignal,QMutex,Qt,QSize
 from matplotlib.backends.backend_qt5agg import FigureCanvasQTAgg as FigureCanvas
 import matplotlib.pyplot as plt
 import numpy as np
 from threading import Thread
 from time import sleep
-from data_process import SerialData
+from data_process import SensorData,Sensor,ReadSerialThread
+from serial import Serial
+from enum import Enum
 
+class Screens:
+    def __init__(self) -> None:
+        self.singleSenTime=1
+        self.allSenTime=2
+        self.allSenXYZ=3
+    
 
 class GraphPlotterApp(QMainWindow):
     def __init__(self):
         super().__init__()
         self.running = False
+        self.plotUpdated = pyqtSignal()
+        self.sensors=[]
+        self.screens = Screens()
+        self.current_screen = self.screens.singleSenTime
+        self.setup_sensors()
         self.init_ui()
-        self.serialData=SerialData(self.running)
-        self.redrawTimer = QTimer(self)
-        self.redrawTimer.timeout.connect(self.update_plot)
-        self.redrawTimer.start(1000)
-        #self.t_readSerial = Thread(target=self.serialData.read_serial,args=(self.serialData.dataAreReady,))
-        self.t_readSerial = QThread()
-        #self.t_waitAndPlot = Thread(target=self.plot_data)
+        self.init_serial()
+        self.start_timer()
         
-
     def init_ui(self):
         self.setWindowTitle("Hall Probe")
         self.setGeometry(100,100,800,600)
-        self.setupMenuBar()
-        self.setupPlotCanvas()
+        #self.setupMenuBar()
+        self.change_graph_screen(self.screens.singleSenTime)
+        self.setupToolbar()
         self.running=True
 
+    def init_serial(self):
+        self.t_readSerial = ReadSerialThread(self.sensors)
+        self.t_readSerial.start()
+        self.t_readSerial.dataAreReady.connect(self.update_plot)
+        self.t_readSerial.start()
+
+    def start_timer(self):
+        self.timer = QTimer(self)
+        self.timer.timeout.connect(self.t_readSerial.start)
+        self.timer.start(1)
+
     def setupMenuBar(self):
-            menu_bar=self.menuBar()             #Vytvoření menu
-            file_menu=menu_bar.addMenu("Settings")  #Přidánízáložky do menu
-            moznosti_menu = menu_bar.addMenu("Moznosti")
-    
-    def setupPlotCanvas(self):
+        menu_bar=self.menuBar()             #Vytvoření menu
+        file_menu=menu_bar.addMenu("Settings")  #Přidánízáložky do menu
+        moznosti_menu = menu_bar.addMenu("Moznosti")
+
+
+    def change_graph_screen(self,screen:Screens):
         self.figure = plt.figure()
         self.canvas = FigureCanvas(self.figure)
-        self.setCentralWidget(self.canvas) 
+    
+        if screen == self.screens.singleSenTime:
+            self.pltA = self.figure.add_subplot(311)
+            self.pltB = self.figure.add_subplot(312)
+            self.pltC = self.figure.add_subplot(313)
+            self.current_screen=self.screens.singleSenTime
 
-    def update_plot(self):
-        print(f"Data: {self.serialData.senData1.x} \n")
-    ''' 
-    def plot_data(self):
-        while self.running:  
-            #self.serialData.read_serial(self.serialData.dataAreReady)          
-            with self.serialData.dataAreReady:
-                print("Main thread waiting for data...")
-                self.serialData.dataAreReady.wait()
-                print("Notified... plotting the data")
-                print(f"Data: {self.serialData.senData1.x} \n")
-                sleep(1)
-                '''
+        if screen == self.screens.allSenTime:
+            self.pltA = self.figure.add_subplot(811)
+            self.pltB = self.figure.add_subplot(812)
+            self.pltC = self.figure.add_subplot(813)
+            self.pltD = self.figure.add_subplot(814)
+            self.pltE = self.figure.add_subplot(815)
+            self.pltF = self.figure.add_subplot(816)
+            self.pltG = self.figure.add_subplot(817)
+            self.pltH = self.figure.add_subplot(818)
+
+            self.current_screen = self.screens.allSenTime
+
+        if screen == self.screens.allSenXYZ:
+            self.pltA = self.figure.add_subplot(311)
+            self.pltB = self.figure.add_subplot(312)
+            self.pltC = self.figure.add_subplot(313)
+
+        self.setCentralWidget(self.canvas)
+        self.canvas.draw()
+        
+    def setupToolbar(self):
+        self.toolbar = QToolBar("Toolbar")
+        self.setup_tool_buttons()
+        self.toolbar.addSeparator()
+        self.addToolBar(Qt.ToolBarArea.LeftToolBarArea,self.toolbar)
+    
+    def setup_tool_buttons(self):
+        self.singleSenTimeButt = QPushButton("Single Sensor \n Time")
+        self.allSenTime = QPushButton("All sensors \n Time")
+        self.allSenXYZButt = QPushButton("All sensors \n X")
+
+
+        self.singleSenTimeButt.setSizePolicy(QSizePolicy.Policy.MinimumExpanding,QSizePolicy.Policy.MinimumExpanding)
+        self.allSenTime.setSizePolicy(QSizePolicy.Policy.MinimumExpanding,QSizePolicy.Policy.MinimumExpanding)
+        self.allSenXYZButt.setSizePolicy(QSizePolicy.Policy.MinimumExpanding,QSizePolicy.Policy.MinimumExpanding)
+
+        
+        self.singleSenTimeButt.pressed.connect(lambda:self.change_graph_screen(self.screens.singleSenTime))
+        self.allSenTime.pressed.connect(lambda: self.change_graph_screen(self.screens.allSenTime))
+        self.allSenXYZButt.pressed.connect(lambda: self.change_graph_screen(self.screens.allSenXYZ))
+        
+        self.toolbar.addWidget(self.singleSenTimeButt)
+        self.toolbar.addWidget(self.allSenTime)
+        self.toolbar.addWidget(self.allSenXYZButt)
+
+
+
+    def setupTabBar(self):
+        tabBar = QTabBar()
+        tabBar.addTab("Sensor 1")
+        tabBar.addTab("Sensor 2")
+        self.toolbar.addWidget(tabBar)
+        self.addToolBar(self.toolbar)
+        self.setTabShape(QTabWidget.TabShape.Triangular)
+    
+    def setupDock(self):
+        self.dock = QDockWidget()
+        area = Qt.DockWidgetArea.LeftDockWidgetArea
+        self.dock.setWidget(QPushButton("button"))
+        self.dock.setWidget(QPushButton("Qbutton2"))
+        self.addDockWidget(area,self.dock)
+
+    def setup_sensors(self):
+        for i in range(0,7):
+            self.sensors.append(Sensor(i))
+  
+    def update_plot(self,sensors:list,t):
+
+        if self.current_screen == self.screens.singleSenTime:
+            print(f"Data to plot: {sensors[0].data.x} \n")
+            y = sensors[0].data.x
+            #self.ax.clear()  # Clear the axes
+            self.pltA.plot(t,y,"-*")
+            self.pltB.plot(t,y,"-*")
+            self.pltC.plot(t,y,"-*")
+            #self.ax.set_ylim(1.2e9,1.3e9)
+
+        if self.current_screen == self.screens.allSenTime:
+            print(f"Data to plot: {sensors[0].data.x} \n")
+            y = sensors[0].data.x
+            #self.ax.clear()  # Clear the axes
+            self.pltA.plot(t,y,"-*")
+            self.pltB.plot(t,y,"-*")
+            self.pltC.plot(t,y,"-*")
+            self.pltD.plot(t,y,"-*")
+            self.pltE.plot(t,y,"-*")
+            self.pltF.plot(t,y,"-*")
+            self.pltG.plot(t,y,"-*")
+            self.pltH.plot(t,y,"-*")
+        if self.current_screen == self.screens.allSenXYZ:
+            self.pltA.plot(t,y,"-*")
+            self.pltB.plot(t,y,"-*")
+            self.pltC.plot(t,y,"-*")
+            
+            #self.ax.set_ylim(1.2e9,1.3e9)
+        self.canvas.draw()
+
+
+
+
+ 
+  
+
+
+
     
      
 
