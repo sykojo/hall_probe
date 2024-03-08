@@ -3,6 +3,7 @@ from PyQt5.QtWidgets import QApplication,QMainWindow,QWidget,QFileDialog,QGridLa
 from PyQt5.QtCore import QObject, QTimer, QThread,pyqtSignal,QMutex,Qt,QSize
 from matplotlib.backends.backend_qt5agg import FigureCanvasQTAgg as FigureCanvas
 import matplotlib.pyplot as plt
+import matplotlib.animation as animation
 import numpy as np
 from threading import Thread
 from time import sleep
@@ -15,6 +16,7 @@ class Screens:
         self.singleSenTime=1
         self.allSenTime=2
         self.allSenXYZ=3
+        self.test=4
     
 
 class GraphPlotterApp(QMainWindow):
@@ -32,7 +34,7 @@ class GraphPlotterApp(QMainWindow):
         
     def init_ui(self):
         self.setWindowTitle("Hall Probe")
-        self.setGeometry(100,100,800,600)
+        self.setGeometry(200,200,1600,1200)
         #self.setupMenuBar()
         self.change_graph_screen(self.screens.singleSenTime)
         self.setupToolbar()
@@ -57,8 +59,12 @@ class GraphPlotterApp(QMainWindow):
 
     def change_graph_screen(self,screen:Screens):
         self.figure = plt.figure()
+        self.figure.patch.set_facecolor("#ececec")
         self.canvas = FigureCanvas(self.figure)
     
+        if screen == self.screens.test:
+            self.pltA = self.figure.add_subplot(111)
+
         if screen == self.screens.singleSenTime:
             self.pltA = self.figure.add_subplot(311)
             self.pltB = self.figure.add_subplot(312)
@@ -131,16 +137,26 @@ class GraphPlotterApp(QMainWindow):
         for i in range(0,7):
             self.sensors.append(Sensor(i))
   
+    def animate(self,i):
+        self.line.set_ydata(np.sin(self.x + i / 50))  # update the data.
+        return self.line,
+
     def update_plot(self,sensors:list,t):
+        self.x = np.arange(0,2*np.pi,0.01)
+        if self.current_screen == self.screens.test:
+            self.line, = self.pltA.plot(self.x, np.sin(self.x))
+            ani = animation.FuncAnimation(self.figure, self.animate,interval=20,blit=True,save_count=50)
+            self.canvas.draw()
 
         if self.current_screen == self.screens.singleSenTime:
             print(f"Data to plot: {sensors[0].data.x} \n")
-            y = sensors[0].data.x
+            y = (sensors[0].data.x)/1000000
             #self.ax.clear()  # Clear the axes
             self.pltA.plot(t,y,"-*")
             self.pltB.plot(t,y,"-*")
             self.pltC.plot(t,y,"-*")
-            #self.ax.set_ylim(1.2e9,1.3e9)
+            #ani = animation.FuncAnimation(self.figure, self.animate,interval=20,blit=True,save_count=50)
+            self.pltA.set_ylim(-5e9,5e9)
 
         if self.current_screen == self.screens.allSenTime:
             print(f"Data to plot: {sensors[0].data.x} \n")

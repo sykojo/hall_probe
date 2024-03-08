@@ -1,2 +1,2 @@
 
-    border-radius:4px;
+    border-color: #48a5fd;
