@@ -5,6 +5,13 @@
 #include "stdint.h"
 #include "main.h"
 
+#define RANGE 75
+
+#define TEST_REG_EXPECTED_VAL 0x54
+#define DEVICE_CONFIG_EXPECTED_VAL 0x502C
+#define SENSOR_CONFIG_EXPECTED_VAL 0x1055
+#define SYSTEM_CONFIG_EXPECTED_VAL 0x00
+
 typedef enum
     {
 		//Test config
@@ -138,7 +145,7 @@ void deselect_sensor();
 void clear_sh_reg();
 void set_sh_reg_OE(uint32_t value);
 uint8_t calc_crc(REGISTER_ADR adr,uint16_t* data);
-double calculate_B(uint16_t data);
+int32_t calculate_B(int32_t data);
 void measuringLED();
 void errorLED();
 

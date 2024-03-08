@@ -14,7 +14,7 @@ uint16_t spi_read_reg(uint8_t regAdr, uint16_t *stat)
 	HAL_StatusTypeDef status;
 	regAdr |= 0x80; //MSB 1 for reading
 	txData[0] = regAdr;
-	status = HAL_SPI_TransmitReceive(&hspi1,txData,rxData,4,50);
+	status = HAL_SPI_TransmitReceive(&hspi1,txData,rxData,4,10);
 	*stat = (rxData[0]<<8) + rxData[3];
 	msg = ((rxData[1]<<8) + rxData[2]);
 	return msg;

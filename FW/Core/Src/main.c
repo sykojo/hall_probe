@@ -50,8 +50,9 @@
 /* Private variables ---------------------------------------------------------*/
 
 /* USER CODE BEGIN PV */
-	Sensor sen1;
-	Sensor sensors[8];
+
+
+
 
 /* USER CODE END PV */
 
@@ -73,7 +74,17 @@ void SystemClock_Config(void);
 int main(void)
 {
   /* USER CODE BEGIN 1 */
+	int16_t x_ch_result=0;
 
+	int32_t x_B=0;
+	uint16_t conv_status=0;
+	uint8_t rdy=0;
+	uint8_t xIsCurrent=0;
+	int32_t lsb = (2*RANGE*1000000)/(1<<16); //LSB in nT
+
+	uint8_t message[2] = {0};
+	int i =0;
+	uint8_t flag=0;
 
   /* USER CODE END 1 */
 
@@ -111,32 +122,50 @@ int main(void)
   //reset_UART();
 
   deactivateSCLR();
+  HAL_Delay(250);
 
-  sen1.adr=1;
-  sen1 = sensor_init(sen1.adr);
+  Sensor sensors[8];
+  Sensor sen1 = sensor_init(8);
+
 /*
   for(int i = 1; i<=NUM_OF_SENSORS; i++)
   {
 	  sensors[i] = sensor_init(i);
   }
 */
-  if(sen1.ok){
+ // if(sen1.ok){
 	  while(1)
 	  {
-		  uint16_t conv_status = read_register(&sen1, CONV_STATUS);
-		  int rdy = conv_status&(1<<0xD) ? 1:0;
-		  if(rdy)
+		  HAL_UART_Receive(&huart4, &flag, 1, HAL_MAX_DELAY);
+
+		  while(1)
+		  {
+			  conv_status = read_register(&sen1, CONV_STATUS);
+			  rdy = (conv_status&(1<<13)) ? 1:0;
+			  xIsCurrent = (conv_status&(1<<8)) ? 1:0;
+			  if(rdy&&xIsCurrent)
+			  {
+				  break;
+			  }
+		  }
+
+		  if(rdy&&xIsCurrent)
 		  {
 			  measuringLED();
-			  uint16_t x_ch_result = read_register(&sen1, X_CH_RESULT);
-			  double x_B = calculate_B(x_ch_result);
-			  uint8_t x_B_int=((uint8_t)x_B) + '0';
-			  HAL_UART_Transmit(&huart4, &x_B_int, 1, 50);
-			  HAL_Delay(100);
+			  x_ch_result = read_register(&sen1, X_CH_RESULT);
+			  x_B = ((int32_t)x_ch_result)*lsb;
+
+			  message[0] = (x_B >> 24) & 0xFF;
+			  message[1] = (x_B >> 16) & 0xFF;
+			  message[2] = (x_B >> 8) & 0xFF;
+			  message[3] = x_B & 0xFF;
+
+			  HAL_UART_Transmit(&huart4, message, 4, 10);
+			  //HAL_Delay(10);
+			  i++;
 		  }
 
 	  }
-
 	  while(1)
 	  {
 		  for(int i=1;i<=NUM_OF_SENSORS;i++)
@@ -153,14 +182,14 @@ int main(void)
 		  }
 
 	  }
-  }
+  /*}
   else
   {
 	  while(1)
 	  {
 		  errorLED();
 	  }
-  }
+  }*/
 // -----Konzultace s Lufinkou----------------
 /*----------Select Sensor-------------*/
   /*

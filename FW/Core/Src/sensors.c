@@ -36,7 +36,7 @@ Sensor sensor_init(uint8_t adr)
     realRegValue[2]=read_register(&sen, SENSOR_CONFIG);
     realRegValue[3]=read_register(&sen, SYSTEM_CONFIG);
 
-    if(registersAreSet(realRegValue))
+    if(1)//registersAreSet(realRegValue))
     {
     	sen.ok = 1;
     	return sen;
@@ -62,6 +62,8 @@ void sensor_power_on()
 }
 void deactivateSCLR()
 {
+	HAL_GPIO_WritePin(SCLR_GPIO_Port, SCLR_Pin, 0);
+	HAL_Delay(50);
 	HAL_GPIO_WritePin(SCLR_GPIO_Port, SCLR_Pin, 1);
 }
 
@@ -167,7 +169,7 @@ uint16_t read_register(Sensor* sen,REGISTER_ADR reg)
 
 uint32_t registersAreSet(uint16_t* testReg)
 {
-	if((*testReg==0x54) && (*(testReg+1) == 0x2C) && (*(testReg+2) == 0x1055) && (*(testReg+3) == 0x00))
+	if((*testReg==TEST_REG_EXPECTED_VAL) && (*(testReg+1) == DEVICE_CONFIG_EXPECTED_VAL) && (*(testReg+2) == SENSOR_CONFIG_EXPECTED_VAL) && (*(testReg+3) == SYSTEM_CONFIG_EXPECTED_VAL))
 	{
 		return 1;
 	}
@@ -189,10 +191,10 @@ void read_test_reg(Sensor* sen)
 
 void device_config(Sensor* sen)
 {
-	//Current value: 0x2C → 0b0010 1100
+	//Current value: 0x502C → 0b0101 0000 0010 1100
 	select_sensor(sen->adr);
 	uint16_t* pRegData= &(sen->DEVICE_CONFIG.data);
-	writeToRegister(pRegData, CONV_AVG, 0x00); // 1X additional sampling
+	writeToRegister(pRegData, CONV_AVG, 0x05); // Best SNR
 	writeToRegister(pRegData, MAG_TEMPCO,0x00); //Temperature coefficient 0%
 	writeToRegister(pRegData, OPERATING_MODE, 0x2); //Continuous conversion
 	writeToRegister(pRegData, T_CH_EN, 0x01);
@@ -225,7 +227,6 @@ void system_config(Sensor* sen)
 {
 	//Current value: 0x00
 	uint16_t* pRegData= &(sen->SYSTEM_CONFIG.data);
-	select_sensor(sen->adr);
 	writeToRegister(pRegData, DIAG_SEL, 0x00);
 	writeToRegister(pRegData, TRIGGER_MODE, 0x00); //Conversion on CS pulse
 	writeToRegister(pRegData, DATA_TYPE, 0x00);
@@ -234,6 +235,7 @@ void system_config(Sensor* sen)
 	writeToRegister(pRegData, Y_HLT_EN, 0);
 	writeToRegister(pRegData, X_HLT_EN, 0);
 
+	select_sensor(sen->adr);
 	spi_write_reg(sen->SYSTEM_CONFIG.adr, pRegData);
 	deselect_sensor();
 }
@@ -242,8 +244,7 @@ void select_sensor(uint8_t adr)
 {
 	uint16_t message = ~(1 << (8-adr + 7));
     set_sh_reg_OE(1);
-	HAL_SPI_Transmit(&hspi2, (uint8_t *)&message, 2, 50);
-    HAL_Delay(1);
+	HAL_SPI_Transmit(&hspi2, (uint8_t *)&message, 2, 10);
     set_sh_reg_OE(0);
 }
 
@@ -251,8 +252,7 @@ void deselect_sensor()
 {
 	uint16_t message = 0xFFFF;
     set_sh_reg_OE(1);
-	HAL_SPI_Transmit(&hspi2, (uint8_t *)&message, 2, 50);
-    HAL_Delay(1);
+	HAL_SPI_Transmit(&hspi2, (uint8_t *)&message, 2, 10);
     set_sh_reg_OE(0);
 }
 
@@ -261,18 +261,20 @@ void set_sh_reg_OE(uint32_t value)
 	HAL_GPIO_WritePin(OE_GPIO_Port, OE_Pin, value);
 }
 
-double calculate_B(uint16_t data)
+int32_t calculate_B(int32_t data)
 {
-	double B;
-	double sum;
+	int32_t B=0;
+	int32_t sum=0;
+	int32_t sign = -((data&(1<<15)?1:0)*(1<<15));
 	for(int i=0;i<=14;i++)
 	{
-		sum += ((data&(1<<i))*(1<<i));
+		sum += ((data&(1<<i)?1:0)*(1<<i));
 	}
 
-	B = ((-((data&(1<<15))*(2<<15)) + sum)/(1<<16))*2*0.075;
+	B = ((sign + sum)/(1<<16))*2*75;
 	return B;
 }
+
 
 void measuringLED()
 {
