@@ -3,13 +3,15 @@
 
 #include "stdio.h"
 #include "stdint.h"
+#include "string.h"
+#include "stdlib.h"
 #include "main.h"
 
 #define RANGE 75
 
 #define TEST_REG_EXPECTED_VAL 0x54
-#define DEVICE_CONFIG_EXPECTED_VAL 0x502C
-#define SENSOR_CONFIG_EXPECTED_VAL 0x1055
+#define DEVICE_CONFIG_EXPECTED_VAL 0x5020
+#define SENSOR_CONFIG_EXPECTED_VAL 0x01D5
 #define SYSTEM_CONFIG_EXPECTED_VAL 0x00
 
 typedef enum
@@ -94,9 +96,18 @@ typedef struct
 
 typedef struct
 {
+	int32_t x_B;
+	int32_t y_B;
+	int32_t z_B;
+}MeasuredData;
+
+typedef struct
+{
     uint8_t adr;
     uint8_t ok;
-    //SensorMeasuredData measured_data;
+    uint8_t num_of_axis;
+    MeasuredData measured_data;
+
     Register DEVICE_CONFIG;
     Register SENSOR_CONFIG;
     Register SYSTEM_CONFIG;
@@ -120,19 +131,15 @@ typedef struct
 	Register MAGNITUDE_RESULT;
 
 }Sensor;
-/*
-typedef struct
-{
-	uint16_t X_CH_DATA;
-	uint16_t Y_CH_DATA;
-	uint16_t Z_CH_DATA;
-}SensorMeasuredData;
-*/
+
+
+
 void writeToRegister(uint16_t* pRegData,REGISTER_FEATURE pos,uint16_t value);
 Sensor sensor_init(uint8_t adr);
 void sensor_power_on();
 void sensor_power_off();
 void deactivateSCLR();
+uint8_t calc_crc(REGISTER_ADR adr,uint16_t* data);
 void registers_adr_config(Sensor* sen);
 uint16_t read_register(Sensor* sen,REGISTER_ADR reg);
 uint32_t registersAreSet(uint16_t* testReg);
@@ -144,10 +151,10 @@ void select_sensor(uint8_t adr);
 void deselect_sensor();
 void clear_sh_reg();
 void set_sh_reg_OE(uint32_t value);
-uint8_t calc_crc(REGISTER_ADR adr,uint16_t* data);
-int32_t calculate_B(int32_t data);
+
 void measuringLED();
 void errorLED();
+void statusLED();
 
 #endif
 

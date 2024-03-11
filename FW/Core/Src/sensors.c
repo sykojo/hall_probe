@@ -1,4 +1,5 @@
 #include "stdint.h"
+#include "string.h"
 #include "sensors.h"
 #include "main.h"
 #include "spi.h"
@@ -16,6 +17,7 @@ Sensor sensor_init(uint8_t adr)
 {
     Sensor sen;
     sen.adr = adr;
+    sen.num_of_axis = 3;
     uint8_t crc_disable[4] = {0x0F,0x00,0x04,0x07};
     uint8_t reg_data[4] = {0};
     uint16_t realRegValue[4]={0};
@@ -27,7 +29,6 @@ Sensor sensor_init(uint8_t adr)
     HAL_Delay(1);
     deselect_sensor();
 
-
     device_config(&sen);
     sensor_config(&sen);
     system_config(&sen);
@@ -36,7 +37,7 @@ Sensor sensor_init(uint8_t adr)
     realRegValue[2]=read_register(&sen, SENSOR_CONFIG);
     realRegValue[3]=read_register(&sen, SYSTEM_CONFIG);
 
-    if(1)//registersAreSet(realRegValue))
+    if(registersAreSet(realRegValue))
     {
     	sen.ok = 1;
     	return sen;
@@ -151,6 +152,16 @@ uint16_t read_register(Sensor* sen,REGISTER_ADR reg)
 		pRegData = &(sen->X_CH_RESULT.data);
 		regAdr = sen->X_CH_RESULT.adr;
 	}
+	else if(reg==Y_CH_RESULT)
+	{
+		pRegData = &(sen->Y_CH_RESULT.data);
+		regAdr = sen->Y_CH_RESULT.adr;
+	}
+	else if(reg==Z_CH_RESULT)
+	{
+		pRegData = &(sen->Z_CH_RESULT.data);
+		regAdr = sen->Z_CH_RESULT.adr;
+	}
 
 	else if((pRegData==NULL)||(regAdr==-1))
 	{
@@ -191,17 +202,12 @@ void read_test_reg(Sensor* sen)
 
 void device_config(Sensor* sen)
 {
-	//Current value: 0x502C → 0b0101 0000 0010 1100
-	select_sensor(sen->adr);
+	//Current value: 0x5020 → 0b0101 0000 0010 0000
 	uint16_t* pRegData= &(sen->DEVICE_CONFIG.data);
 	writeToRegister(pRegData, CONV_AVG, 0x05); // Best SNR
-	writeToRegister(pRegData, MAG_TEMPCO,0x00); //Temperature coefficient 0%
 	writeToRegister(pRegData, OPERATING_MODE, 0x2); //Continuous conversion
-	writeToRegister(pRegData, T_CH_EN, 0x01);
-	writeToRegister(pRegData, T_RATE, 0x01);
-	writeToRegister(pRegData, T_HLT_EN, 0x00);
 
-
+	select_sensor(sen->adr);
 	spi_write_reg(sen->DEVICE_CONFIG.adr, pRegData);
 	deselect_sensor();
 }
@@ -209,16 +215,16 @@ void device_config(Sensor* sen)
 
 void sensor_config(Sensor* sen)
 {
-	//Current value: 0x1055 → 0b0001 0000 0101 0101
+	//Current value: 0x01D5 → 0b0000 0001 1101 0101
 	uint16_t* pRegData= &(sen->SENSOR_CONFIG.data);
-	select_sensor(sen->adr);
 	writeToRegister(pRegData,ANGLE_EN ,0x00);
-	writeToRegister(pRegData,SLEEPTIME,0x04);//20ms sleeptime between conversions
-	writeToRegister(pRegData,MAG_CH_EN,0x1);//Only X chanel enabled
+	writeToRegister(pRegData,SLEEPTIME,0x00);//1ms sleeptime between conversions
+	writeToRegister(pRegData,MAG_CH_EN,0x7);//X,Y,Z channel enabled
 	writeToRegister(pRegData,Z_RANGE,0x1);//+-75mT field range
 	writeToRegister(pRegData,Y_RANGE,0x1);//+-75mT field range
 	writeToRegister(pRegData,X_RANGE,0x1);//+-75mT field range
 
+	select_sensor(sen->adr);
 	spi_write_reg(sen->SENSOR_CONFIG.adr, pRegData);
 	deselect_sensor();
 }
@@ -227,13 +233,8 @@ void system_config(Sensor* sen)
 {
 	//Current value: 0x00
 	uint16_t* pRegData= &(sen->SYSTEM_CONFIG.data);
-	writeToRegister(pRegData, DIAG_SEL, 0x00);
 	writeToRegister(pRegData, TRIGGER_MODE, 0x00); //Conversion on CS pulse
 	writeToRegister(pRegData, DATA_TYPE, 0x00);
-	writeToRegister(pRegData, DIAG_EN, 0x00);
-	writeToRegister(pRegData, Z_HLT_EN, 0);
-	writeToRegister(pRegData, Y_HLT_EN, 0);
-	writeToRegister(pRegData, X_HLT_EN, 0);
 
 	select_sensor(sen->adr);
 	spi_write_reg(sen->SYSTEM_CONFIG.adr, pRegData);
@@ -261,31 +262,22 @@ void set_sh_reg_OE(uint32_t value)
 	HAL_GPIO_WritePin(OE_GPIO_Port, OE_Pin, value);
 }
 
-int32_t calculate_B(int32_t data)
-{
-	int32_t B=0;
-	int32_t sum=0;
-	int32_t sign = -((data&(1<<15)?1:0)*(1<<15));
-	for(int i=0;i<=14;i++)
-	{
-		sum += ((data&(1<<i)?1:0)*(1<<i));
-	}
-
-	B = ((sign + sum)/(1<<16))*2*75;
-	return B;
-}
 
 
 void measuringLED()
 {
 	  HAL_GPIO_TogglePin(LED_MEASURING_GPIO_Port, LED_MEASURING_Pin);
-	  HAL_Delay(2);
 }
 
 void errorLED()
 {
 	HAL_GPIO_TogglePin(LED_ERROR_GPIO_Port, LED_ERROR_Pin);
-	HAL_Delay(2);
+	HAL_Delay(50);
+}
+
+void statusLED()
+{
+	HAL_GPIO_TogglePin(LED_STATUS_GPIO_Port, LED_STATUS_Pin);
 }
 
 /*

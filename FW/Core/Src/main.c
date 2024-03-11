@@ -39,6 +39,7 @@
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
 #define NUM_OF_SENSORS 8
+#define NUM_OF_AXIS 2
 
 /* USER CODE END PD */
 
@@ -74,17 +75,16 @@ void SystemClock_Config(void);
 int main(void)
 {
   /* USER CODE BEGIN 1 */
-	int16_t x_ch_result=0;
+	//int16_t x_ch_result=0;
 
-	int32_t x_B=0;
-	uint16_t conv_status=0;
-	uint8_t rdy=0;
-	uint8_t xIsCurrent=0;
-	int32_t lsb = (2*RANGE*1000000)/(1<<16); //LSB in nT
+	//int32_t x_B=0;
+	//uint16_t conv_status=0;
+	//uint8_t rdy=0;
+	//uint8_t xIsCurrent=0;
 
-	uint8_t message[2] = {0};
-	int i =0;
-	uint8_t flag=0;
+	//uint8_t message[2] = {0};
+	//int i =0;
+
 
   /* USER CODE END 1 */
 
@@ -115,81 +115,115 @@ int main(void)
   MX_SPI2_Init();
   /* USER CODE BEGIN 2 */
 
-  sensor_power_on();
-  HAL_Delay(250);
-
-
-  //reset_UART();
-
-  deactivateSCLR();
-  HAL_Delay(250);
-
-  Sensor sensors[8];
-  Sensor sen1 = sensor_init(8);
-
-/*
-  for(int i = 1; i<=NUM_OF_SENSORS; i++)
-  {
-	  sensors[i] = sensor_init(i);
-  }
-*/
+  //Sensor sen1 = sensor_init(8);
  // if(sen1.ok){
+//	  while(1)
+//	  {
+//		  HAL_UART_Receive(&huart4, &flag, 1, HAL_MAX_DELAY);
+//
+//		  while(1)
+//		  {
+//			  conv_status = read_register(&sen1, CONV_STATUS);
+//			  rdy = (conv_status&(1<<13)) ? 1:0;
+//			  xIsCurrent = (conv_status&(1<<8)) ? 1:0;
+//			  if(rdy&&xIsCurrent)
+//			  {
+//				  break;
+//			  }
+//		  }
+//
+//		  if(rdy&&xIsCurrent)
+//		  {
+//			  measuringLED();
+//			  x_ch_result = read_register(&sen1, X_CH_RESULT);
+//			  x_B = ((int32_t)x_ch_result)*lsb;
+//
+//			  message[0] = (x_B >> 24) & 0xFF;
+//			  message[1] = (x_B >> 16) & 0xFF;
+//			  message[2] = (x_B >> 8) & 0xFF;
+//			  message[3] = x_B & 0xFF;
+//
+//			  HAL_UART_Transmit(&huart4, message, 4, 10);
+//			  //HAL_Delay(10);
+//			  i++;
+//		  }
+//
+//	  }
+  	  uint16_t conv_status = 0;
+  	  uint8_t rdy = 0;
+  	  uint8_t dataAreCurrent= 0;
+  	  uint8_t num_of_sensors = 8;
+  	  Sensor* sensors = (Sensor*)malloc(sizeof(Sensor)*num_of_sensors);
+
+  	  sensor_power_on();
+  	  HAL_Delay(250);
+
+  	  deactivateSCLR();
+  	  HAL_Delay(250);
+
+  	  for(int i = 0; i<(num_of_sensors); i++)
+  	  {
+  		  if(i==3)continue;
+
+  		  sensors[i] = sensor_init(i+1);
+  		  if(!(sensors[i].ok))
+  		  {
+  			  while(1)
+  			  {
+  				  errorLED();
+  				  HAL_Delay(200);
+  			  }
+  		  }
+  	  }
+
 	  while(1)
 	  {
-		  HAL_UART_Receive(&huart4, &flag, 1, HAL_MAX_DELAY);
+		  uint8_t flag=0;
 
-		  while(1)
+		  for(int i=0;i<(num_of_sensors);i++)
 		  {
-			  conv_status = read_register(&sen1, CONV_STATUS);
-			  rdy = (conv_status&(1<<13)) ? 1:0;
-			  xIsCurrent = (conv_status&(1<<8)) ? 1:0;
-			  if(rdy&&xIsCurrent)
+			  HAL_UART_Receive(&huart4, &flag, 1, HAL_MAX_DELAY);
+			  //if(i==3)continue;
+			  if(sensors[6].ok)
 			  {
-				  break;
+				  do{
+					  conv_status = read_register(&sensors[6], CONV_STATUS);
+					  rdy = conv_status&(1<<13) ? 1:0;
+					  dataAreCurrent= conv_status&(0x07<<8) ? 1:0;
+				  }while(!(dataAreCurrent&&rdy));
+
+				  int32_t lsb = (2*RANGE*1000000)/(1<<16); //LSB in nT
+				  measuringLED();
+
+				  int16_t x_result = read_register(&sensors[6],X_CH_RESULT);
+				  int16_t y_result = read_register(&sensors[6],Y_CH_RESULT);
+				  int16_t z_result = read_register(&sensors[6],Z_CH_RESULT);
+
+				  sensors[6].measured_data.x_B = ((int32_t)x_result)*lsb;
+				  sensors[6].measured_data.y_B = ((int32_t)y_result)*lsb;
+				  sensors[6].measured_data.z_B = ((int32_t)z_result)*lsb;
+
+//				  sensors[7].measured_data.x_B = (int32_t)(51);
+//				  sensors[7].measured_data.y_B = (int32_t)(52);
+//				  sensors[7].measured_data.z_B = (int32_t)(53);
+
+				  uint8_t* message = (uint8_t*)malloc(sizeof(MeasuredData));
+				  if(message==NULL) errorLED();
+				  memcpy(message,&(sensors[6].measured_data),sizeof(MeasuredData));
+				  HAL_UART_Transmit(&huart4, message, sizeof(MeasuredData), HAL_MAX_DELAY);
+				  free(message);
+			  }
+			  else
+			  {
+				  while(1)
+				  {
+					  errorLED();
+				  }
 			  }
 		  }
-
-		  if(rdy&&xIsCurrent)
-		  {
-			  measuringLED();
-			  x_ch_result = read_register(&sen1, X_CH_RESULT);
-			  x_B = ((int32_t)x_ch_result)*lsb;
-
-			  message[0] = (x_B >> 24) & 0xFF;
-			  message[1] = (x_B >> 16) & 0xFF;
-			  message[2] = (x_B >> 8) & 0xFF;
-			  message[3] = x_B & 0xFF;
-
-			  HAL_UART_Transmit(&huart4, message, 4, 10);
-			  //HAL_Delay(10);
-			  i++;
-		  }
-
 	  }
-	  while(1)
-	  {
-		  for(int i=1;i<=NUM_OF_SENSORS;i++)
-		  {
-			  uint16_t conv_status = read_register(&sensors[i], CONV_STATUS);
-			  int rdy = conv_status&(1<<0xD) ? 1:0;
-			  if(rdy)
-			  {
-				  uint16_t x_ch_result = read_register(&sensors[i], X_CH_RESULT);
-				  double x_B = calculate_B(x_ch_result);
-				  int x_B_int=(int)x_B;
-				  HAL_Delay(100);
-			  }
-		  }
+  	  free(sensors);
 
-	  }
-  /*}
-  else
-  {
-	  while(1)
-	  {
-		  errorLED();
-	  }
-  }*/
 // -----Konzultace s Lufinkou----------------
 /*----------Select Sensor-------------*/
   /*
