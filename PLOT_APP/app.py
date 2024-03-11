@@ -39,6 +39,7 @@ class GraphPlotterApp(QMainWindow):
         self.change_graph_screen(self.screens.singleSenTime)
         self.setupToolbar()
         self.running=True
+        self.debug=True
 
     def init_serial(self):
         self.t_readSerial = ReadSerialThread(self.sensors)
@@ -150,13 +151,15 @@ class GraphPlotterApp(QMainWindow):
 
         if self.current_screen == self.screens.singleSenTime:
             print(f"Data to plot: {sensors[0].data.x} \n")
-            y = (sensors[0].data.x)/1000000
+            y1 = (sensors[0].data.x)
+            y2 = (sensors[0].data.y)
+            y3 = (sensors[0].data.z)
             #self.ax.clear()  # Clear the axes
-            self.pltA.plot(t,y,"-*")
-            self.pltB.plot(t,y,"-*")
-            self.pltC.plot(t,y,"-*")
+            self.pltA.plot(t,y1,"-*")
+            self.pltB.plot(t,y2,"-*")
+            self.pltC.plot(t,y3,"-*")
             #ani = animation.FuncAnimation(self.figure, self.animate,interval=20,blit=True,save_count=50)
-            self.pltA.set_ylim(-5e9,5e9)
+            #self.pltA.set_ylim(-5e9,5e9)
 
         if self.current_screen == self.screens.allSenTime:
             print(f"Data to plot: {sensors[0].data.x} \n")

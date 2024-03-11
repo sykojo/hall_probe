@@ -29,38 +29,33 @@ class ReadSerialThread(QThread):
         super().__init__()
         self.sensors = sensors
         self.t=0
+        self.debug=True
         print(f"Sensors: {self.sensors}")
         self.serialPort = Serial('COM9',baudrate=115200)
         self.mutex = QMutex()
         
 
     def run(self):
-        self.serialPort.write("\n".encode())
+        self.serialPort.write("0".encode())
         self.serialPort.timeout=0
-        print("Reading data from serial \n")
+        data = [0,0,0]
+        data_decoded = [0,0,0]
+        if self.debug:
+            print("Reading data from serial \n")
+            print("------------------------------------------------")
         self.mutex.lock()
-        data = self.serialPort.read(4)
-        print(len(data))
-        
-        print(f"Recieved data: {data} \n")
-        #self.decode_data(data)
-        self.sensors[0].data.x = int.from_bytes(data,"big",signed=True)
-        print(f"Decoded data x: {(self.sensors[0].data.x)/1000000.0} \n")
+        for i in range(3):
+            data[i]=self.serialPort.read(4)
+            data_decoded[i] = int.from_bytes(data[i],"little",signed=True)
+            setattr(self.sensors[0].data,['x','y','z'][i],data_decoded[i])
+            if self.debug:
+                print(f"Recieved data: {int.from_bytes(data[i],"little",signed=True)} \n")  
+        print(f"Stored data x: {self.sensors[0].data.x} \n")
+        print(f"Stored data y: {self.sensors[0].data.y} \n")
+        print(f"Stored data z: {self.sensors[0].data.z} \n")
         self.t = self.t+1
         self.dataAreReady.emit(self.sensors,self.t)
-         # TODO x,y,z
         self.mutex.unlock()
 
-    def decode_data(self,data):
-        # Assuming the data is received as little endian
-        print(f"data : {data} \n")
-        x_B = 0
-        x_B = data[0] << 24
-        x_B |= data[1] << 16
-        x_B |= data[2] << 8
-        x_B |= data[3]
-        self.sensors[0].data.x = x_B
-        print(x_B)
-        print(type(x_B))
 
     
